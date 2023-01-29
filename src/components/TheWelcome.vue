@@ -8,12 +8,7 @@ import SupportIcon from './icons/IconSupport.vue'
 </script>
 
 <template>
-<form>
-  <input class="border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent ...">
-  <button class="bg-purple-600 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 ...">
-    Sign up
-  </button>
-</form>  <WelcomeItem>
+  <WelcomeItem>
     <template #icon>
       <DocumentationIcon />
     </template>

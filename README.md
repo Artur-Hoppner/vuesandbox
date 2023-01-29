@@ -32,3 +32,5 @@ npm run build
 
 ## ToDO:
 change fileformat and add multiple favicons to ajust multiple standard sizes https://github.com/Artur-Hoppner/Pendlare-PWA/blob/master/public/index.html
+
+https://github.com/Artur-Hoppner/SpamA-Pic/blob/master/public/manifest.json

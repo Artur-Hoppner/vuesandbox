@@ -1,0 +1,41 @@
+{
+  "activeLanguage": "sv",
+  "textStrings": {
+    "rubrik": {
+      "sv": "Rubrik",
+      "en": "Header"},
+    "buttonToggleString": {
+      "sv": "Toggla sträng",
+      "en": "Toggle String"
+    },
+    "headerLinks": [
+      {
+        "id": "cat1",
+        "active": true,
+        "languageString": {
+          "sv": "Frågor",
+          "en": "Questions"
+        },
+        "link": "www.google.se"
+      },
+      {
+        "id": "cat2",
+        "active": false,
+        "languageString": {
+          "sv": "Skrivs inte ut",
+          "en": "Not printed"
+        },
+        "link": "www.google.se"
+      },
+      {
+        "id": "cat3",
+        "active": true,
+        "languageString": {
+          "sv": "Viktigt",
+          "en": "Important"
+        },
+        "link": "www.google.se"
+      }
+    ]
+  }
+}
