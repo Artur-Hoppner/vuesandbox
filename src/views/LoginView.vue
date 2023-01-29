@@ -1,14 +1,18 @@
 <script setup>
 import { ref } from 'vue'
 import { generalStore } from '@/stores/general';
+import { userAuthentication } from '@/stores/authentication';
 
-const testing = generalStore()
-const placeholderUsername = ref("fdfsjkl")
-testing.testing()
+const generalStoreData = generalStore(),
+      authenticationStore = userAuthentication(),
+      loginInputData = ref({
+        userName: "",
+        password: ""
+      })
 
 function login() {
-  testing.loggedIn()
-  console.log("activating")
+  authenticationStore.loggedIn(loginInputData)
+  console.log("login function")
 }
 
 </script>
@@ -20,13 +24,13 @@ function login() {
         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
           Username
         </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" :placeholder="placeholderUsername">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" v-model="loginInputData.userName" :placeholder="generalStoreData.placeholder.username">
       </div>
       <div class="mb-6">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
           Password
         </label>
-        <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
+        <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" v-model="loginInputData.password" :placeholder="generalStoreData.placeholder.password">
         <!-- change -->
         <p class="text-red-500 text-xs italic">Please type in password.</p>
         <p class="text-red-500 text-xs italic">Wrong password.</p>

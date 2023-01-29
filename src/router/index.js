@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { generalStore } from '@/stores/general';
+import { userAuthentication } from '@/stores/authentication';
 import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 
@@ -27,13 +27,13 @@ import LoginView from '../views/LoginView.vue'
       // redirect to login page if not logged in and trying to access a restricted page
       const publicPages = ['/login'];
       const authRequired = !publicPages.includes(to.path);
-      const authentication = generalStore()
-      console.log(authentication.AuthStore)
+      const authentication = userAuthentication()
 
       if (authRequired && !authentication.AuthStore) {
           return '/login';
       }
   });
+
 export default router
 
 /*  CAN USE IT LIKE THIS AND HAVE: 
