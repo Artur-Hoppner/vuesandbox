@@ -1,13 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { userAuthentication } from '@/stores/authentication';
 import HomeView from '../views/HomeView.vue'
-import LoginView from '../views/LoginView.vue'
 
   const routes = [
     {
       path: '/login',
       name: 'login',
-      component: LoginView
+      component: () => import('../views/LoginView.vue')
+    },
+    {
+      path: '/logout',
+      name: 'logout',
+      beforeEnter (to, from, next) {
+        // need to save authentication inside beforeEach because beforeEach loads before variables outside
+        const authentication = userAuthentication()
+        authentication.logout()
+        return next('/login');
+      }
     },
     {
       path: '/',
@@ -15,9 +24,14 @@ import LoginView from '../views/LoginView.vue'
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue')
+      path: '/styleguide',
+      name: 'styleguide',
+      component: () => import('../views/Styleguide.vue')
+    },
+    {
+      path: '/sandbox',
+      name: 'sandbox',
+      component: () => import('../views/Sandbox.vue')
     }
   ]
 
@@ -27,9 +41,10 @@ import LoginView from '../views/LoginView.vue'
       // redirect to login page if not logged in and trying to access a restricted page
       const publicPages = ['/login'];
       const authRequired = !publicPages.includes(to.path);
+      // need to save authentication inside beforeEach because beforeEach loads before variables outside
       const authentication = userAuthentication()
 
-      if (authRequired && !authentication.AuthStore) {
+      if (authRequired && !authentication.authenticatedUser) {
           return '/login';
       }
   });
