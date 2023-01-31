@@ -9,12 +9,6 @@ const generalStoreData = generalStore(),
         userName: "",
         password: ""
       })
-
-function login() {
-  authenticationStore.loggedIn(loginInputData)
-  console.log("login function")
-}
-
 </script>
 
 <template>
@@ -37,13 +31,14 @@ function login() {
 
       </div>
       <div class="flex items-center justify-between">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" @click="login">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" @click="authenticationStore.loggedIn(loginInputData)">
           Sign In
         </button>
       </div>
     </form>
   </div>
 
+  <a class="xl:text-9xl">H1 </a>
   <h1>H1 </h1>
   <br>
   <h2>H2 </h2>
