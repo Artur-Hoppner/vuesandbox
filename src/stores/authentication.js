@@ -18,8 +18,6 @@ export const userAuthentication = defineStore('authentication', () => {
       console.log("set local storage", localStorage.getItem('user'))
       authenticatedUser.value = true
       router.push({ name: "home" });
-
-
     }
   }
 

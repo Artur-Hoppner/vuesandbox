@@ -20,11 +20,7 @@ export const colorPreferenceStore = defineStore('darkMode', () => {
   }
 
   function toggleDarkmode() {
-    if (localStorage.getItem('theme') === 'dark') {
-      checkLightMode(false)
-    } else {
-      checkLightMode(true)
-    }
+     localStorage.getItem('theme') === 'dark' ? checkLightMode(false) : checkLightMode(true);
   }
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
