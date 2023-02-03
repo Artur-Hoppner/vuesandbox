@@ -1,13 +1,12 @@
-FROM node: lts-alpine
+FROM node:lts-alpine
 WORKDIR /usr/src/app
 COPY vuesandbox/package*.json ./
-Run ls -l
+RUN ls -l
 RUN npm install
-Run ls -l
-Run npm run build
 COPY vuesandbox ./
-COPY vuesandbox/nodeserver.js dist/nodeserver.js
+RUN ls -l
+RUN npm run build
+COPY vuesandbox/nodeServer.js dist/nodeServer.js
 WORKDIR /usr/src/app
 EXPOSE 8080
-CMD ["node", "nodeserver.js"]
-
+CMD ["node", "nodeServer.js"]
