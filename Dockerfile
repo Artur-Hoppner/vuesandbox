@@ -1,19 +1,13 @@
-FROM node:lts-alpine as build-stage
+FROM node: lts-alpine
+WORKDIR /usr/src/app
+COPY vuesandbox/package*.json ./
+Run ls -l
+RUN npm install
+Run ls -l
+Run npm run build
+COPY vuesandbox ./
+COPY vuesandbox/nodeserver.js dist/nodeserver.js
+WORKDIR /usr/src/app
+EXPOSE 8080
+CMD ["node", "nodeserver.js"]
 
-# Install app
-WORKDIR /app
-COPY package*.json ./
-COPY package-lock.json .
-RUN npm i
-# npm ci installs directly from package-lock.json the exact
-# versions wich is faster than from package*.json.
-
-# Test and build app
-COPY . .
-RUN npm run build
-
-# Production stage
-FROM nginx:stable-alpine as production-stage
-COPY --from=build-stage /app/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
