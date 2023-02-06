@@ -1,12 +1,11 @@
 FROM node:lts-alpine
-WORKDIR /usr/src/app
+WORKDIR /app
 COPY package*.json ./
 RUN ls -l
 RUN npm install
 COPY ./ .
 RUN ls -l
 RUN npm run build
-COPY nodeServer.js dist/nodeServer.js
-WORKDIR /usr/src/app
-EXPOSE 8080
-CMD ["node", "nodeServer.js"]
+WORKDIR /app
+EXPOSE 8000
+CMD ["npm", "run", "dev"]
