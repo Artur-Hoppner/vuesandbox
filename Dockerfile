@@ -8,4 +8,3 @@ RUN ls -l
 RUN npm run build
 WORKDIR /app
 EXPOSE 8000
-CMD ["npm", "run", "dev"]
