@@ -5,9 +5,14 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview --port 8000"
+    "copyserver": "copyfiles server dist",
+    "moveserver": "babel --verbose --out-dir dist/server server",
+    "preview": "vite preview --port 8000",
+    "start": "node dist/server/index.js"
+    
   },
   "dependencies": {
+    "express": "^4.18.2",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"

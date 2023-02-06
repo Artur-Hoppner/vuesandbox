@@ -6,10 +6,13 @@ RUN npm install
 COPY ./ .
 RUN ls -l
 RUN npm run build
-COPY nodeServer.js dist/nodeServer.js
+COPY server dist/server
 WORKDIR /app/dist
 EXPOSE 8000
-CMD [ "node", "nodeServer.js" ]
+CMD ["npm", "start"]
+
+# for use of test node server: https://github.com/joeynguyen/vite-react-express-docker-boilerplate/blob/main/Dockerfile
+# CMD ["npm", "start"]
 
 # This works on the server but uses npm run dev (development mode)
 # FROM node:lts-alpine
