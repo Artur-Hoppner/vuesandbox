@@ -1,6 +1,6 @@
 // const http = require('http')
 // const fs = require('fs')
-// const httpPort = 8080
+// const httpPort = 8000
 
 // http.createServer((req, res) => {
 //   let fileToRead = 'index.html'
