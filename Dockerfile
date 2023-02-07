@@ -12,7 +12,6 @@ EXPOSE 8000
 CMD ["npm", "start"]
 
 # for use of test node server: https://github.com/joeynguyen/vite-react-express-docker-boilerplate/blob/main/Dockerfile
-# CMD ["npm", "start"]
 
 # This works on the server but uses npm run dev (development mode)
 # FROM node:lts-alpine
