@@ -1,6 +1,6 @@
 <script setup>
   import { ref } from 'vue'
-  import Nav from './components/header/UserNav.vue';
+  import Nav from './components/UserNav.vue';
   import CopyRight from './components/copyRight.vue';
   import { userAuthentication } from '@/stores/authentication';
   import { colorPreferenceStore } from '@/stores/darkMode';
