@@ -37,5 +37,5 @@ https://github.com/Artur-Hoppner/SpamA-Pic/blob/master/public/manifest.json
 
 Cookie concent banner:
  cookie concent mode
- GTMGA€
+ GTM
 

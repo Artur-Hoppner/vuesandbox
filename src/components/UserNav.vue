@@ -1,11 +1,21 @@
 <script setup>
+import {ref} from 'vue'
+import { colorPreferenceStore  } from '@/stores/darkMode';
+import SvgIcon from '@/components/parts/svgIcon.vue';
+
+const generalStoreData = colorPreferenceStore();
+const svgLightMode = ref({svgFile: "lightmode", fill: "white", ajustToHeight: "100%"}),
+      svgDarkMode = ref({svgFile: "darkmode", fill: "white", ajustToHeight: "100%"})
+
 </script>
+
 <template >
-  <nav>
+  <nav class="grid grid-cols-8">
     <RouterLink  to="/">Home</RouterLink>
     <RouterLink to="/sandbox">Sandbox</RouterLink>
     <RouterLink to="/styleguide">Styleguide</RouterLink>
     <Router-link to="/logout">Logout</Router-link>
+    <SvgIcon v-if="generalStoreData.darkmodeToggle" :svgOptions="svgDarkMode" @click="generalStoreData.toggleDarkmode()" />
+    <SvgIcon v-if="!generalStoreData.darkmodeToggle" :svgOptions="svgLightMode" @click="generalStoreData.toggleDarkmode()" />
   </nav>
-  
 </template>

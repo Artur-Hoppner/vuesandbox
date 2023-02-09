@@ -1,21 +1,17 @@
 <script setup>
   import { ref } from 'vue'
-  import Nav from './components/UserNav.vue';
-  import CopyRight from './components/copyRight.vue';
+  import Nav from '@/components/UserNav.vue';
+  import CopyRight from '@/components/copyRight.vue';
   import { userAuthentication } from '@/stores/authentication';
-  import { colorPreferenceStore } from '@/stores/darkMode';
 
 
   const authentication = userAuthentication(),
-        dateYear = ref("copyright: Artur Höppner " + new Date().getFullYear()),
-        generalStoreData = colorPreferenceStore();
+        dateYear = ref("copyright: Artur Höppner " + new Date().getFullYear())
+
 </script>
 
 <template>
-  <header class="dark:bg-black bg-red-300">
-    <button class="btn-primary" @click="generalStoreData.toggleDarkmode()">
-      {{generalStoreData.colorModeString}}
-    </button>
+  <header class="dark:bg-red-900 bg-red-300 ">
     <img alt="Vue logo" class="logo p-1.5" src="@/assets/ahlogo.png" width="80" height="80" />
     <div v-if="authentication.authenticatedUser" class="wrapper">
       <Nav />
