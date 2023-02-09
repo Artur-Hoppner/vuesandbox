@@ -1,7 +1,7 @@
 <script setup>
 import {ref} from 'vue'
 import { colorPreferenceStore  } from '@/stores/darkMode';
-import SvgIcon from '@/components/parts/svgIcon.vue';
+import SvgIcon from '@/components/parts/SvgIcon.vue';
 
 const generalStoreData = colorPreferenceStore();
 const svgLightMode = ref({svgFile: "lightmode", fill: "white", ajustToHeight: "100%"}),
