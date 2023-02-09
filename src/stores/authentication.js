@@ -15,7 +15,6 @@ export const userAuthentication = defineStore('authentication', () => {
     if (userData.userName == "" && userData.password == "") {
       // this is temporary authentivcation until backend is finished and can send finished token with respons-data.
       localStorage.setItem('user', 'enkryptedToken');
-      console.log("set local storage", localStorage.getItem('user'))
       authenticatedUser.value = true
       router.push({ name: "home" });
     }
