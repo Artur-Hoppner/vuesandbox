@@ -1,7 +1,7 @@
 <script setup>
   import { ref } from 'vue'
   import Header from '@/components/Header.vue';
-  import CopyRight from '@/components/CopyRight.vue';
+  import CopyRight from './components/CopyRightInc.vue';
 
   const dateYear = ref("copyright: Artur Höppner " + new Date().getFullYear())
 
