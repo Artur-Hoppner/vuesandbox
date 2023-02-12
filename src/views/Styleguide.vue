@@ -9,7 +9,6 @@ import StyleguideButtons from '../components/styleguide/StyleguideButtons.vue'
   <div>
     <StyleguideColors />
     <StyleguideButtons />
-    <!-- <StyleguideInput />     -->
 
     <div id="textContainer">
       <h1>H1 </h1>

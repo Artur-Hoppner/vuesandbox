@@ -37,5 +37,4 @@ const generalStoreData = generalStore(),
       </div>
     </form>
   </div>
-
 </template>

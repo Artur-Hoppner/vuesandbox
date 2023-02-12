@@ -5,13 +5,6 @@ const props = defineProps({
     required: true
   }
   })
-
-// defineProps({
-//   dateYear: {
-//     type: String,
-//     required: true
-//   }
-// })  
 </script>
 
 <template>

@@ -1,7 +1,6 @@
 <script setup>
 import {onMounted} from 'vue'
 
-
 const arrayOf = []
 const answerOfArrays = []
 
@@ -11,7 +10,6 @@ onMounted(() => {
       numbertext = +i + 1
       // console.log(numbertext)
     arrayOf.push(numbertext)
-
   }
   
   for (let i = 0; i < 1000; ++i) {
@@ -25,10 +23,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="about">
-    <h1>boxSand</h1>
-  </div>
+  <h1>SandBOX</h1>
 </template>
-
-<style>
-</style>
