@@ -1,7 +1,7 @@
 <script setup>
 import StyleguideColors from '../components/styleguide/StyleguideColors.vue'
 import StyleguideButtons from '../components/styleguide/StyleguideButtons.vue'
-import StyleguideInput from '../components/styleguide/StyleguideInput.vue'
+// import StyleguideInput from '../components/styleguide/StyleguideInput.vue'
 </script>
 
 <template>
@@ -9,9 +9,8 @@ import StyleguideInput from '../components/styleguide/StyleguideInput.vue'
   <div>
     <StyleguideColors />
     <StyleguideButtons />
-    <StyleguideInput />    
+    <!-- <StyleguideInput />     -->
 
-    <h2>html text</h2>
     <div id="textContainer">
       <h1>H1 </h1>
       <br>

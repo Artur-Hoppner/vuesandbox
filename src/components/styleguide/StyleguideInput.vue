@@ -4,52 +4,43 @@
 
 <template>
   <div class="mt-2 grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-1">
-    <div>
-      <label for="inputText">text</label>
+    <div class="flex items-center justify-center">
       <input id="inputText" type="text" placeholder="text">
     </div>
 
-    <div>
-      <label for="inputCheckbox">checkbox</label>
+    <div class="flex items-center justify-center">
       <input id="inputCheckbox" type="checkbox">
     </div>
 
-    <div>
-      <label for="inputData">date</label>
+    <div class="flex items-center justify-center">
       <input id="inputData" type="date">
     </div>
 
-    <div>
-      <label for="inputFile">file</label>
+    <div class="flex items-center justify-center">
       <input id="inputFile" type="file">
     </div>
-    <div>
-      <label for="inputNumber">number</label> 
+    <div class="flex items-center justify-center">
       <input id="inputNumber" type="number" placeholder="number">
     </div>
 
-    <div>
-      <label for="inputPassword">password</label>
+    <div class="flex items-center justify-center">
       <input id="inputPassword" type="password" placeholder="password">
     </div>
 
-    <div>
+    <div class="flex items-center justify-center">
       <label for="inputRadio">radio</label>
       <input id="inputRadio" type="radio">
     </div>
 
-    <div>
-      <label for="inputRange">range</label>
+    <div class="flex items-center justify-center">
       <input id="inputRange" type="range">
     </div>
 
-    <div>
-      <label for="inputSearch">range</label>
+    <div class="flex items-center justify-center">
       <input type="search" placeholder="search" >
     </div>
 
-    <div>
-      <label for="inputTel">tel</label>
+    <div class="flex items-center justify-center">
       <input id="inputTel" type="tel">
     </div>
 
