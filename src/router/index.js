@@ -14,8 +14,10 @@ import HomeView from '../views/HomeView.vue'
       beforeEnter (to, from, next) {
         // need to save authentication inside beforeEach because beforeEach loads before variables outside
         const authentication = userAuthentication()
-        authentication.logout()
-        return next('/login');
+        if (authentication.authenticatedUser) {
+          authentication.logout()
+        }
+          return next('/login');
       }
     },
     {
@@ -37,6 +39,8 @@ import HomeView from '../views/HomeView.vue'
 
   const router = createRouter({ history: createWebHistory(), routes })
 
+   /* Redirect all trafic to /login if if not logged in */
+  /*
   router.beforeEach(async (to) => {
       // redirect to login page if not logged in and trying to access a restricted page
       const publicPages = ['/login'];
@@ -48,6 +52,7 @@ import HomeView from '../views/HomeView.vue'
           return '/login';
       }
   });
+  */
 
 export default router
 

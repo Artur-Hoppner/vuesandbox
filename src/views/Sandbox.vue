@@ -23,5 +23,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>SandBOX</h1>
+<div >
+  <h1>Vincents Önskelista</h1>
+  <ul>
+    <li>Gravitax 400-700kr</li>
+    <li><a href="https://cdon.se/leksaker/pokemon-sword-shield-11-lost-origin-elite-trainer-box-p111482130?gclid=CjwKCAiA3KefBhByEiwAi2LDHAgZqlKLPeITEWQ_gobqoREsag8wraGdUopD4-sJN4hD3na6lj9gtxoC-AUQAvD_BwE">Giratina Box</a></li>
+    <li><a href="https://www.teknikproffset.se/leksaker-barn-babyprodukter/leksaker-2/sallskapsspel/barnspel/pokemon-tcg-pokemon-go-elite-trainer-box?gclid=CjwKCAiA3KefBhByEiwAi2LDHFaobr-lC1OOzeA04A5LmRlAydAreDpCZOt6SO_kPmcrQxOsyJbPEhoCFDQQAvD_BwE">Pokémon TCG: Pokémon GO - Elite Trainer Box</a></li>
+  </ul>
+  <img src="../assets/icons/charmander.ico" alt="">
+  <img src="../assets/icons/mew.ico" alt="">
+  
+</div>
 </template>

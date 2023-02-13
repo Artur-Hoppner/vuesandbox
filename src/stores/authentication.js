@@ -4,11 +4,13 @@ import router from "@/router/index";
 
 export const userAuthentication = defineStore('authentication', () => {
 
-  const authenticatedUser = ref(false)
+  const authenticatedUser = ref(false),
+        routerLinkString = ref("Login")
 
   // check if user is logged in.
   if(localStorage.getItem('user')) {
     authenticatedUser.value = true
+    routerLinkString.value = "Logout"
   }
 
   function loggedIn(userData) {
@@ -17,6 +19,8 @@ export const userAuthentication = defineStore('authentication', () => {
       localStorage.setItem('user', 'enkryptedToken');
       authenticatedUser.value = true
       router.push({ name: "home" });
+      routerLinkString.value = "Logut"
+
     }
   }
 
@@ -24,8 +28,9 @@ export const userAuthentication = defineStore('authentication', () => {
     if(localStorage.getItem('user')) {
       localStorage.removeItem('user');
       authenticatedUser.value = false
+      routerLinkString.value = "Login"
     }
   }
 
-  return { authenticatedUser, loggedIn, logout }
+  return { authenticatedUser, routerLinkString, loggedIn, logout }
 })

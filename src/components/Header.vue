@@ -2,14 +2,12 @@
 import { ref} from 'vue'
 import Nav from '@/components/HeaderNav.vue';
 import SvgIcon from '@/components/parts/SvgIcon.vue';
-import { userAuthentication } from '@/stores/authentication';
 import { colorPreferenceStore  } from '@/stores/darkMode';
 
 const generalStoreData = colorPreferenceStore();
 const svgLightMode = ref({svgFile: "lightmode", fill: "white", ajustToHeight: "100%"}),
       svgDarkMode = ref({svgFile: "darkmode", fill: "white", ajustToHeight: "100%"})
       // pageLogo = ref({svgFile: "ahlogo"})
-const authentication = userAuthentication() 
 </script>
 
 <template>
@@ -20,6 +18,6 @@ const authentication = userAuthentication()
     <!-- fix logo size and ajustment to svg file -->
     <!-- <SvgIcon class="" :svgOptions="pageLogo" /> -->
     <img alt="Vue logo" class="logo p-1.5" src="@/assets/ahlogo.png" width="80" height="80" />
-    <Nav v-if="authentication.authenticatedUser" />
+    <Nav />
   </header>
 </template>

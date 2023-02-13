@@ -1,7 +1,6 @@
 <script setup>
 import StyleguideColors from '../components/styleguide/StyleguideColors.vue'
 import StyleguideButtons from '../components/styleguide/StyleguideButtons.vue'
-// import StyleguideInput from '../components/styleguide/StyleguideInput.vue'
 </script>
 
 <template>
@@ -9,7 +8,6 @@ import StyleguideButtons from '../components/styleguide/StyleguideButtons.vue'
   <div>
     <StyleguideColors />
     <StyleguideButtons />
-
     <div id="textContainer">
       <h1>H1 </h1>
       <br>
@@ -24,11 +22,7 @@ import StyleguideButtons from '../components/styleguide/StyleguideButtons.vue'
       <h6>H6 </h6>
       <br>
       <p>p element</p>
-      <a class="">a element</a>
-
+      <a>a element</a>
     </div>
   </div>
 </template>
-
-<style>
-</style>
