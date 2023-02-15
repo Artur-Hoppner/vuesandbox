@@ -15,7 +15,7 @@ Use slot props instead: -->
   </transition>
   </router-view> -->
 
-  <main class="mx-10">
+  <main class="sm:mx-10">
       <transition name="route" mode="out-in" appear>
     <RouterView />
   </transition>
