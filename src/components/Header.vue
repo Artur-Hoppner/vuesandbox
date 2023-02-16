@@ -5,8 +5,8 @@ import SvgIcon from '@/components/parts/SvgIcon.vue';
 import { colorPreferenceStore  } from '@/stores/darkMode';
 
 const generalStoreData = colorPreferenceStore();
-const svgLightMode = ref({svgFile: "lightmode", fill: "white", ajustToHeight: "100%"}),
-      svgDarkMode = ref({svgFile: "darkmode", fill: "white", ajustToHeight: "100%"})
+const svgLightMode = ref({svgFile: "lightmode", fill: "white", ajustToHeight: "26px"}),
+      svgDarkMode = ref({svgFile: "darkmode", fill: "white", ajustToHeight: "26px"})
       // pageLogo = ref({svgFile: "ahlogo"})
 </script>
 

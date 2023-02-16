@@ -5,15 +5,14 @@ import { generalStore } from '../stores/general'
 const props = defineProps(['user', "index"]),
       checked = ref(false),
       intersections = ref({
-        intersectioElements: `#bubble${props.index}`,
+        intersectioElements: '#bubbleContainer',
+        givenClassElement: [`#bubble${props.index}`], //Leave empty if intersectioElements should get class
         givenClass: "wibe",
-        timoutValue: Math.random()*700,
+        timeoutValue: [Math.random() * 700],
         removeClassOnExit: true,
-        alternative: {
-          root: null,
-          rootMargin: '0px 0px 0px 0px',
-          threshold: 0.5
-        }
+        root: null,
+        rootMargin: '0px 0px 0px 0px',
+        threshold: 0.5
       });
 
 function changeStade() {

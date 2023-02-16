@@ -4,8 +4,6 @@ import { userAuthentication } from '@/stores/authentication';
 import { onMounted } from '@vue/runtime-core';
 const authentication = userAuthentication()
 const routerUserLogin = ref("Login")
-console.log(authentication.authenticatedUser)
-console.log(authentication.routerLinkString)
 </script>
 
 <template >
