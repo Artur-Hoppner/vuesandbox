@@ -3,6 +3,12 @@ import { ref } from 'vue'
 import { generalStore } from '@/stores/general';
 import { userAuthentication } from '@/stores/authentication';
 
+// use storeToRefs and fix al over the app
+import { storeToRefs } from 'pinia'
+
+const { testing } = storeToRefs(generalStore())
+// console.log(testing)
+
 const generalStoreData = generalStore(),
       authenticationStore = userAuthentication(),
       loginInputData = ref({

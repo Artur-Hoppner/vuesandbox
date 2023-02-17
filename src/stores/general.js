@@ -7,8 +7,40 @@ export const generalStore = defineStore('general', () => {
     password: "***********",
     generalStrings: ""
   })
+  const testing = ref("testing")
 
-  // TODO: Pass in object to give other element or elements classes.
+  // set cookies
+  function setCookies(data) {
+    document.cookie = `${data.name}=${data.value}`; //Todo Set expire date, pref by hours. 
+    // expires=${data.expires}
+    // ;path=${data.path}
+  }
+
+  // check cookies
+  function getCookies(cname) {
+      console.log("getCookies init Name", cname)
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // Remove cookies
+  function removeCookies(data) {
+    console.log("init remove coolkies", data)
+    document.cookie = `${data}=;expires=Thu, 01 Jan 1970 00:00:00 GMT`
+  }
+
+  // Observe Intersection Function
   function observeIntersections(intersections) {
     const options = {
       root: intersections.root ? intersections.root :null,
@@ -17,10 +49,9 @@ export const generalStore = defineStore('general', () => {
     };
    
     const observer = new IntersectionObserver((entries) => {
-
       entries.forEach((entry) => {
 
-        if (entry.isIntersecting) { // (entry.isIntersectionRatio > 0)
+        if (entry.isIntersecting) { // Alternative: (entry.isIntersectionRatio > 0)
             if(intersections.givenClassElement) {
               for(let i = 0; intersections.givenClassElement.length > i; i++ ) {
                 setTimeout(() => {
@@ -37,7 +68,9 @@ export const generalStore = defineStore('general', () => {
           if(intersections.givenClassElement) {
             for(let i = 0; intersections.givenClassElement.length > i; i++ ) {
               setTimeout(() => {
-                document.querySelector(intersections.givenClassElement[i]).classList.remove(intersections.givenClass);
+                //  Avoid error that the element is null if element dont exist on view
+                const element = document.querySelector(intersections.givenClassElement[i])
+                element ? element.classList.remove(intersections.givenClass) : "";
               }, intersections.timeoutValue[i])
             }
           } else {
@@ -53,5 +86,5 @@ export const generalStore = defineStore('general', () => {
     })
   }
 
-  return { placeholder, observeIntersections }
+  return {testing, placeholder, observeIntersections, setCookies, getCookies, removeCookies }
 })

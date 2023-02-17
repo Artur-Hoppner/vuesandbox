@@ -1,6 +1,7 @@
 <script setup>
   import Header from '@/components/Header.vue';
   import Footer from '@/components/Footer.vue';
+  import CookieConsent from './components/parts/cookieConsentBanner.vue'
 </script>
 
 <template>
@@ -21,6 +22,7 @@ Use slot props instead: -->
   </transition>
   </main>
   <Footer />
+  <CookieConsent />
 </template>
 
 <style>

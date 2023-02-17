@@ -11,7 +11,7 @@ const svgLightMode = ref({svgFile: "lightmode", fill: "white", ajustToHeight: "2
 </script>
 
 <template>
-  <header class="dark:bg-primary bg-secondary">
+  <header class="dark:bg-secondary bg-primary">
     <!-- // Experiment so that you only use 1 SvgIcon -->
     <SvgIcon class="cursor-pointer absolute top-0 right-0 m-2" v-if="generalStoreData.darkmodeToggle" :svgOptions="svgDarkMode" @click="generalStoreData.toggleDarkmode()" />
     <SvgIcon class="cursor-pointer absolute top-0 right-0 m-2" v-if="!generalStoreData.darkmodeToggle" :svgOptions="svgLightMode" @click="generalStoreData.toggleDarkmode()" />
