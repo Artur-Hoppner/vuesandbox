@@ -20,14 +20,12 @@ export default {
 </script>
 
 <template>
-  <div>
-    <component :is="dynamicComponent" />
-  </div>
+  <component :is="dynamicComponent" />
 </template>
 
 <style scoped>
   svg {
-    height: 100%;
+    height: v-bind(svgOptions.ajustToHeight);
     width: v-bind(svgOptions.ajustToHeight);
     fill: v-bind(svgOptions.fill);
   }
