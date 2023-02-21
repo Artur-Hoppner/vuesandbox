@@ -19,6 +19,12 @@ const users = ref([
 </script>
 
 <template>
+  <div class="p-12">
+    <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, laudantium incidunt molestias in fugiat architecto perspiciatis facilis earum repudiandae vitae. Illum consequuntur totam maiores mollitia? Ad, voluptatibus similique. Tempore, corrupti! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae hic eos fugiat cum quis dolorum blanditiis in nesciunt. Libero debitis aut a tempora excepturi sequi adipisci, et repudiandae aliquam voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, pariatur vel soluta autem, labore at vero dolores, quas nam assumenda deleniti natus nesciunt temporibus inventore adipisci eum perferendis distinctio. Maxime.</h4>
+  </div>
+  <div class="p-12">
+    <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, laudantium incidunt molestias in fugiat architecto perspiciatis facilis earum repudiandae vitae. Illum consequuntur totam maiores mollitia? Ad, voluptatibus similique. Tempore, corrupti! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae hic eos fugiat cum quis dolorum blanditiis in nesciunt. Libero debitis aut a tempora excepturi sequi adipisci, et repudiandae aliquam voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, pariatur vel soluta autem, labore at vero dolores, quas nam assumenda deleniti natus nesciunt temporibus inventore adipisci eum perferendis distinctio. Maxime.</h4>
+  </div>
   <div class="h-28" ></div>
   <div id="bubbleContainer" class="bg-primary sm:mx-10 sm:rounded-lg p-4">
     <h3 class="text-slate-50 font-black">My Bubbles</h3>

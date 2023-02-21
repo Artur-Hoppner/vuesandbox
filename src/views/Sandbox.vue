@@ -1,9 +1,23 @@
 <script setup>
-import {onMounted} from 'vue'
+import {onMounted, ref} from 'vue'
+import SvgIcon from '@/components/parts/SvgIcon.vue';
+import FallbackContent from '@/components/parts/FallbackContent.vue';
 
-const arrayOf = []
-const answerOfArrays = []
+const arrayOf = [],
+      answerOfArrays = [],
+      testingThis = ref({svgFile: "pikachu", fill: "white", ajustToHeight: "100%"}),
+      timeOutSuspense = () => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve({
+              object: "Testing of VUE 3 Experimental Feature Suspense"
+            })
+          }, 1000)
+        })
+      },
+      testingSuspens = ref(await timeOutSuspense());
 
+// Testing algoritm of what numbers from 1-100 that can both be divided på 3 and 5
 onMounted(() => {
     let numbertext = 0
     for (let i = 0; i < 1000; ++i) {
@@ -23,24 +37,26 @@ onMounted(() => {
 </script>
 
 <template>
-<div >
-  <h1>Vincents Önskelista</h1>
-  <ul>
-    <li>Gravitax 400-700kr</li>
-    <li><a href="https://cdon.se/leksaker/pokemon-sword-shield-11-lost-origin-elite-trainer-box-p111482130?gclid=CjwKCAiA3KefBhByEiwAi2LDHAgZqlKLPeITEWQ_gobqoREsag8wraGdUopD4-sJN4hD3na6lj9gtxoC-AUQAvD_BwE" target="_blank" rel="noopener noreferrer">Giratina Box</a></li>
-    <li><a href="https://www.teknikproffset.se/leksaker-barn-babyprodukter/leksaker-2/sallskapsspel/barnspel/pokemon-tcg-pokemon-go-elite-trainer-box?gclid=CjwKCAiA3KefBhByEiwAi2LDHFaobr-lC1OOzeA04A5LmRlAydAreDpCZOt6SO_kPmcrQxOsyJbPEhoCFDQQAvD_BwE" target="_blank" rel="noopener noreferrer">Pokémon TCG: Pokémon GO - Elite Trainer Box</a></li>
-  </ul>
+  <div >
 
-  <div class="w-24 h-24 relative  bg-primary">
-    <div class="absolute top-0 left-0 p-4  rounded-full bg-secondary"></div>
-    <div class="absolute top-0 right-0 p-4 rounded-full bg-secondary"></div>
-    <div class="absolute bottom-0 left-0 p-4 rounded-full bg-secondary"></div>
-    <div class="absolute bottom-0 right-0 p-4 rounded-full bg-secondary"></div>
-    <div class="absolute 	inset-x-2/4		 p-4 bg-warning rounded-full bg-secondary"></div>
+    <h1>Vincents Önskelista</h1>
+    <ul>
+      <li>Gravitax 400-700kr</li>
+      <li><a href="https://cdon.se/leksaker/pokemon-sword-shield-11-lost-origin-elite-trainer-box-p111482130?gclid=CjwKCAiA3KefBhByEiwAi2LDHAgZqlKLPeITEWQ_gobqoREsag8wraGdUopD4-sJN4hD3na6lj9gtxoC-AUQAvD_BwE" target="_blank" rel="noopener noreferrer">Giratina Box</a></li>
+      <li><a href="https://www.teknikproffset.se/leksaker-barn-babyprodukter/leksaker-2/sallskapsspel/barnspel/pokemon-tcg-pokemon-go-elite-trainer-box?gclid=CjwKCAiA3KefBhByEiwAi2LDHFaobr-lC1OOzeA04A5LmRlAydAreDpCZOt6SO_kPmcrQxOsyJbPEhoCFDQQAvD_BwE" target="_blank" rel="noopener noreferrer">Pokémon TCG: Pokémon GO - Elite Trainer Box</a></li>
+    </ul>
+
+    <!-- <img src="../assets/icons/charmander.ico" alt="">
+    <img src="../assets/icons/mew.ico" alt=""> -->
+
+
+  <!-- <div class="loading-screen">
+    <SvgIcon :svgOptions="testingThis" />
+  </div> -->
+        
 
   </div>
-  <!-- <img src="../assets/icons/charmander.ico" alt="">
-  <img src="../assets/icons/mew.ico" alt=""> -->
-  
-</div>
 </template>
+
+<style  scoped>
+</style>
