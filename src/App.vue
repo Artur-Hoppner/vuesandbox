@@ -6,7 +6,6 @@
   import CookieConsent from './components/parts/cookieConsentBanner.vue'
 
   const loadingScreen = ref({svgFile: "pikachu", fill: "white", ajustToHeight: "100%"}),
-        givenFadeOutClass = ref({svgFile: "pikachu", fill: "white", ajustToHeight: "100%"}),
         birthdayWishlist = true
 
 </script>

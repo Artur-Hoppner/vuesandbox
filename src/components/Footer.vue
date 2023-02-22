@@ -3,7 +3,6 @@
   import CopyRight from './FooterCopyRight.vue';
   import SvgIcon from '@/components/parts/SvgIcon.vue';
 
-
   const githubIcon = ref({svgFile: "github", fill: "black", ajustToHeight: "26px", link: "https://github.com/Artur-Hoppner/"});
   const lionkedinIcon = ref({svgFile: "linkedin", fill: "black", ajustToHeight: "26px", link: "https://www.linkedin.com/in/artur-h%C3%B6ppner/"});
   const dateYear = "copyright: Artur Höppner " + new Date().getFullYear();
