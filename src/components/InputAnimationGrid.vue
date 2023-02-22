@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { generalStore } from '../stores/general'
+import { observeIntersections } from '@/composables/intersectionObserver.js';
 
 const props = defineProps(['user', "index"]),
       checked = ref(false),
@@ -20,7 +20,7 @@ function changeStade() {
 }
 
 onMounted(() => {
- generalStore().observeIntersections(intersections.value)
+ observeIntersections(intersections.value)
 })
 </script>
 

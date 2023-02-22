@@ -7,17 +7,24 @@
 
   const loadingScreen = ref({svgFile: "pikachu", fill: "white", ajustToHeight: "100%"}),
         givenFadeOutClass = ref({svgFile: "pikachu", fill: "white", ajustToHeight: "100%"}),
-        birthdayWishlist = false
+        birthdayWishlist = true
 
 </script>
 
 <template>
+
   <div v-if="birthdayWishlist" class="loading-screen bg-neutral-800  absolute top-0 left-0  flex justify-center justify-items-center items-center z-50 h-full w-full">
     <SvgIcon :svgOptions="loadingScreen" />
   </div>
   <div v-if="birthdayWishlist">
     <h1>Vincents önskelista</h1>
+    <ul>
+      <li>Gravitax 400-700kr</li>
+      <li><a href="https://cdon.se/leksaker/pokemon-sword-shield-11-lost-origin-elite-trainer-box-p111482130?gclid=CjwKCAiA3KefBhByEiwAi2LDHAgZqlKLPeITEWQ_gobqoREsag8wraGdUopD4-sJN4hD3na6lj9gtxoC-AUQAvD_BwE" target="_blank" rel="noopener noreferrer">Giratina Box</a></li>
+      <li><a href="https://www.teknikproffset.se/leksaker-barn-babyprodukter/leksaker-2/sallskapsspel/barnspel/pokemon-tcg-pokemon-go-elite-trainer-box?gclid=CjwKCAiA3KefBhByEiwAi2LDHFaobr-lC1OOzeA04A5LmRlAydAreDpCZOt6SO_kPmcrQxOsyJbPEhoCFDQQAvD_BwE" target="_blank" rel="noopener noreferrer">Pokémon TCG: Pokémon GO - Elite Trainer Box</a></li>
+    </ul>
   </div>
+
   <div v-if="!birthdayWishlist">
     <Header />
     
@@ -38,6 +45,7 @@
     
     <Footer />
     <CookieConsent />
+
   </div>
 </template>
 
