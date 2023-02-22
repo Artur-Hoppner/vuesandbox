@@ -7,7 +7,7 @@ import { debouncer } from '@/composables/debouncer.js';
 const { positionX, positionY } = useMouse()
 
 // Debouncer testing:
-const testStringDebouncer = "Debounder string parameter"
+const testStringDebouncer = "Debounder string parameter",
       debouncedFunction = debouncer( function() {saveInput(testStringDebouncer)}, 500)
 
 function saveInput(parameter){
