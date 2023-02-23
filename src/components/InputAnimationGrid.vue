@@ -8,7 +8,7 @@ const props = defineProps(['user', "index"]),
         intersectioElements: '#bubbleContainer',
         givenClassElement: [`#bubble${props.index}`], //Leave empty if intersectioElements should get class
         givenClass: "wibe",
-        timeoutValue: [Math.random() * 700],
+        timeoutValue: [(Math.random() * 200) + (props.index+50)],
         removeClassOnExit: true,
         root: null,
         rootMargin: '0px 0px 0px 0px',

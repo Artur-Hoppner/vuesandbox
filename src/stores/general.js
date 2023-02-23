@@ -18,7 +18,6 @@ export const generalStore = defineStore('general', () => {
 
   // check cookies
   function getCookies(cname) {
-      console.log("getCookies init Name", cname)
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
     let ca = decodedCookie.split(';');

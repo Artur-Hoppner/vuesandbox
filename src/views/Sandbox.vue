@@ -56,16 +56,18 @@ onMounted(() => {
 </script>
 
 <template>
-  <!-- {{ positionX }}{{ positionY }} -->
-  <button @click="debouncedFunction">Debouncer Function</button>
-  <div >
-    <!-- <img src="../assets/icons/charmander.ico" alt="">
-    <img src="../assets/icons/mew.ico" alt=""> -->
+  <div>
+    <!-- {{ positionX }}{{ positionY }} -->
+    <button @click="debouncedFunction">Debouncer Function</button>
+    <div >
+      <!-- <img src="../assets/icons/charmander.ico" alt="">
+      <img src="../assets/icons/mew.ico" alt=""> -->
 
-  <!-- <div class="loading-screen">
-    <SvgIcon :svgOptions="testingThis" />
-  </div> -->
+    <!-- <div class="loading-screen">
+      <SvgIcon :svgOptions="testingThis" />
+    </div> -->
 
+    </div>
   </div>
 </template>
 
