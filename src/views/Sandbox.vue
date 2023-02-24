@@ -27,7 +27,7 @@ const arrayOf = [],
             resolve({
               object: "Testing of VUE 3 Experimental Feature Suspense"
             })
-          }, 1000)
+          }, 500)
         })
       },
       testingSuspens = ref(await timeOutSuspense());
@@ -67,6 +67,11 @@ onMounted(() => {
       <SvgIcon :svgOptions="testingThis" />
     </div> -->
 
+      <ul>
+        <li>Lexical Scope (get to in nested functions, down not up)</li>
+        <li>Closure</li>
+        <li>Higher order functions</li>
+      </ul>
     </div>
   </div>
 </template>

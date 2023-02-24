@@ -3,6 +3,8 @@ import Header from '@/components/Header.vue';
 import VincentsWishlist from '@/components/VincentsWishlist.vue';
 import Footer from '@/components/Footer.vue';
 import CookieConsent from './components/parts/cookieConsentBanner.vue'
+import TerminalAnimation from './components/LandingpageAnimation.vue'
+
 const birthdayWishlist = true
 
 </script>
@@ -11,8 +13,8 @@ const birthdayWishlist = true
   <VincentsWishlist v-if="birthdayWishlist" />
   
   <div v-if="!birthdayWishlist">
+    <TerminalAnimation />
     <Header />
-
     <main class="sm:mx-10">
       <router-view v-slot="{ Component }">
         <template v-if="Component">
@@ -35,6 +37,7 @@ const birthdayWishlist = true
 </template>
 
 <style>
+
 #app {text-align:center}
 
 .fade-enter-active {

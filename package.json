@@ -7,7 +7,6 @@
     "build": "vite build",
     "preview": "vite preview --port 8000",
     "start": "node dist/server/index.js"
-    
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -19,6 +18,8 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
+    "sass": "^1.58.3",
+    "sass-loader": "^13.2.0",
     "tailwindcss": "^3.2.4",
     "vite": "^4.0.0"
   }

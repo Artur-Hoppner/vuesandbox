@@ -41,4 +41,4 @@ export function observeIntersections(intersections) {
     document.querySelectorAll(intersections.intersectioElements).forEach((section) => {
     observer.observe(section);
   })
-} 
+}

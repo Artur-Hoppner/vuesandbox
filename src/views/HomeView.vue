@@ -20,9 +20,10 @@ const users = ref([
 
 <template>
   <div>
-    <div class="p-12">
-      <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, laudantium incidunt molestias in fugiat architecto perspiciatis facilis earum repudiandae vitae. Illum consequuntur totam maiores mollitia? Ad, voluptatibus similique. Tempore, corrupti! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae hic eos fugiat cum quis dolorum blanditiis in nesciunt. Libero debitis aut a tempora excepturi sequi adipisci, et repudiandae aliquam voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, pariatur vel soluta autem, labore at vero dolores, quas nam assumenda deleniti natus nesciunt temporibus inventore adipisci eum perferendis distinctio. Maxime.</h4>
+    <div class="p-12 h-38 bg-teal-100">
+      Hi and welcome to my sandbox.
     </div>
+    <a href="https://css-tricks.com/snippets/jquery/smooth-scrolling/">smooth-scrolling</a>
     <div class="p-12">
       <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, laudantium incidunt molestias in fugiat architecto perspiciatis facilis earum repudiandae vitae. Illum consequuntur totam maiores mollitia? Ad, voluptatibus similique. Tempore, corrupti! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae hic eos fugiat cum quis dolorum blanditiis in nesciunt. Libero debitis aut a tempora excepturi sequi adipisci, et repudiandae aliquam voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, pariatur vel soluta autem, labore at vero dolores, quas nam assumenda deleniti natus nesciunt temporibus inventore adipisci eum perferendis distinctio. Maxime.</h4>
     </div>
@@ -40,6 +41,33 @@ const users = ref([
           />
         </ul>
       </div>
+    </div>
+    <div class="w-full h-48 bg-green-500">
+      <h3>My Skills</h3>
+      <ul class="grid grid-cols-4">
+        <li>Vue 3</li>
+        <li>Pinia</li>
+        <li>Git</li>
+        <li>Gitlab</li>
+        <li>Github</li>
+        <li>Bitbucket</li>
+        <li>Foundation</li>
+        <li>Tailwind</li>
+        <li>Node</li>
+        <li>Javascript</li>
+        <li>DigitalOcean</li>
+        <li>Heroku</li>
+        <li>Docker</li>
+        <li>Twig</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>SASS</li>
+        <li>GA</li>
+      </ul>
+    </div>
+
+    <div class="w-full h-48 bg-teal-300">
+      <h4>Scroll and add elements to this container</h4>
     </div>
   </div>
 </template>

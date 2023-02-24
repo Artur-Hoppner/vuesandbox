@@ -7,7 +7,13 @@ export const generalStore = defineStore('general', () => {
     password: "***********",
     generalStrings: ""
   })
-  const testing = ref("testing")
+  const settingCookieValue = {
+    name: "Cookie Concent",
+    value: "accepted",
+    expires: "" // empty means no expiration date
+  };
+  const testing = ref("testing");
+  const cookieConsentStatus = ref(false);
 
   // set cookies
   function setCookies(data) {
@@ -39,7 +45,11 @@ export const generalStore = defineStore('general', () => {
     document.cookie = `${data}=;expires=Thu, 01 Jan 1970 00:00:00 GMT`
   }
 
-  return {testing, placeholder, setCookies, getCookies, removeCookies }
+  onMounted(() => {
+    cookieConsentStatus.value = getCookies(settingCookieValue.name);
+  })
+
+  return {cookieConsentStatus, testing, placeholder, setCookies, getCookies, removeCookies }
 })
 
 
