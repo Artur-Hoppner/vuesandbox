@@ -43,12 +43,12 @@
 </script>
 
 <template>
-  <div v-if="!displayAnimationBoolian" class="text-gray-7 00 flex items-center justify-center flex-col bg-gray-50 absolute top 0 w-full h-full z-40">
+  <div v-if="!displayAnimationBoolian" class="text-gray-7 00 flex items-center justify-center flex-col bg-gray-50 fixed top-0 left-0 w-full h-full z-40">
     <p class="text-grey-500 text-8xl font-extrabold">404</p>
     <p class="text-2xl py-4">Page not found.</p>
     <p>The page you are looking for does not exist or an other error occurred.</p>
   </div>
-  <div v-if="!displayAnimationBoolian" :class="!displayAnimationBoolian ? 'terminal-container' : ''" class="text-gray-7 00 flex items-center justify-center flex-col bg-gray-50 absolute top 0 w-full h-full z-40">
+  <div v-if="!displayAnimationBoolian" :class="!displayAnimationBoolian ? 'terminal-container' : ''" class="text-gray-7 00 flex items-center justify-center flex-col bg-gray-50 fixed top-0 left-0 w-full h-full z-40">
     <div class="w-full h-72 flex items-center z-50">
       <div class="w-1/2 sm:w-1/3 mx-auto">
         <div class="w-full shadow-2xl subpixel-antialiased rounded-b-md rounded-t-lg h-80 bg-black border-black mx-auto">

@@ -1,4 +1,4 @@
-import { ref, onMounted} from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const generalStore = defineStore('general', () => {
@@ -41,7 +41,6 @@ export const generalStore = defineStore('general', () => {
 
   // Remove cookies
   function removeCookies(data) {
-    console.log("init remove coolkies", data)
     document.cookie = `${data}=;expires=Thu, 01 Jan 1970 00:00:00 GMT`
   }
 
@@ -49,7 +48,16 @@ export const generalStore = defineStore('general', () => {
     cookieConsentStatus.value = getCookies(settingCookieValue.name);
   })
 
-  return {cookieConsentStatus, testing, placeholder, setCookies, getCookies, removeCookies }
+  const standardCounderRef = ref(1)
+
+  const doubleCount = computed(() => standardCounderRef.value * 2)
+
+  function incrementButton() {
+    console.log("Init")
+    
+    standardCounderRef.value = standardCounderRef.value + 1
+  }
+  return {incrementButton, standardCounderRef, doubleCount, cookieConsentStatus, testing, placeholder, setCookies, getCookies, removeCookies }
 })
 
 

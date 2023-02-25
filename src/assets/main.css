@@ -16,8 +16,14 @@
   }
 }
 
+body {
+  /* min-height: 100vh;
+  margin: 0 auto; */
+}
 
-
+#app {
+  /* min-height: 100vh; */
+}
 /* refactor this to other file or logic */
 h1 {
   font-size: 3.8vmin;

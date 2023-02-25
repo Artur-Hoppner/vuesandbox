@@ -9,7 +9,7 @@
 </script>
 
 <template>
-  <footer class="mb-1">
+  <footer class="absolute bottom-0 bg-primary w-full">
     <a :href="githubIcon.link" target="_blank" rel="noopener noreferrer" class="block w-0">
       <SvgIcon class="hover:fill-slate-300 cursor-pointer" :svgOptions="githubIcon" />
     </a>

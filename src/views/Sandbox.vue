@@ -4,6 +4,7 @@ import SvgIcon from '@/components/parts/SvgIcon.vue';
 import FallbackContent from '@/components/parts/FallbackContent.vue';
 import { useMouse } from '@/composables/mousePosition.js';
 import { debouncer } from '@/composables/debouncer.js';
+import StoreToRef from '@/components/StoreToRef.vue'
 const { positionX, positionY } = useMouse()
 
 // Debouncer testing:
@@ -57,6 +58,11 @@ onMounted(() => {
 
 <template>
   <div>
+    <transition name="slide-fade">
+      <h2>Hejsan</h2>
+    </transition>
+
+    <StoreToRef />
     <!-- {{ positionX }}{{ positionY }} -->
     <button @click="debouncedFunction">Debouncer Function</button>
     <div >
@@ -77,4 +83,17 @@ onMounted(() => {
 </template>
 
 <style  scoped>
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
 </style>

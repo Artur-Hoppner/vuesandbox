@@ -5,23 +5,23 @@ import Footer from '@/components/Footer.vue';
 import CookieConsent from './components/parts/cookieConsentBanner.vue'
 import TerminalAnimation from './components/LandingpageAnimation.vue'
 
-const birthdayWishlist = true
+const birthdayWishlist = false
 
 </script>
 
 <template>
   <VincentsWishlist v-if="birthdayWishlist" />
-  
-  <div v-if="!birthdayWishlist">
-    <TerminalAnimation />
+  <!-- fix body min height-100vh + position: relative -->
+  <div v-if="!birthdayWishlist" class="min-h-screen relative">
     <Header />
     <main class="sm:mx-10">
       <router-view v-slot="{ Component }">
         <template v-if="Component">
-          <transition name="fade">
+          <transition name="fade" appear>
             <suspense timeout="0">
               <component :is="Component" :key="$route.path"></component>
               <template #fallback>
+                <!-- use suspense on components later on -->
                 <div>Loading...</div>
               </template>
             </suspense>
@@ -31,6 +31,8 @@ const birthdayWishlist = true
     </main>
     
     <Footer />
+    <TerminalAnimation />
+
     <CookieConsent />
 
   </div>
@@ -41,7 +43,7 @@ const birthdayWishlist = true
 #app {text-align:center}
 
 .fade-enter-active {
-  transition: opacity 0.6s;
+  transition: opacity 2.6s;
 }
 
 .fade-leave-to,
