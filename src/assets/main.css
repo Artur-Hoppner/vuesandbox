@@ -24,32 +24,3 @@ body {
 #app {
   /* min-height: 100vh; */
 }
-/* refactor this to other file or logic */
-h1 {
-  font-size: 3.8vmin;
-}
-
-h2 {
-  font-size: 3.2vmin;
-}
-
-h3 {
-  font-size: 2.8vmin;
-}
-
-h4 {
-  font-size: 2.4vmin;
-}
-
-h5 {
-  font-size: 2.0vmin;
-
-}
-
-h6 {
-  font-size: 1.6vmin;
-}
-
-p {
-  font-size: 12px;
-}

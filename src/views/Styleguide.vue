@@ -1,6 +1,10 @@
 <script setup>
 import StyleguideColors from '../components/styleguide/StyleguideColors.vue'
 import StyleguideButtons from '../components/styleguide/StyleguideButtons.vue'
+import gsap from 'gsap'
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 </script>
 
 <template>
@@ -26,3 +30,34 @@ import StyleguideButtons from '../components/styleguide/StyleguideButtons.vue'
     </div>
   </div>
 </template>
+
+<style scoped>
+  h1 {
+    font-size: 3.8vmin;
+  }
+
+  h2 {
+    font-size: 3.2vmin;
+  }
+
+  h3 {
+    font-size: 2.8vmin;
+  }
+
+  h4 {
+    font-size: 2.4vmin;
+  }
+
+  h5 {
+    font-size: 2.0vmin;
+
+  }
+
+  h6 {
+    font-size: 1.6vmin;
+  }
+
+  p {
+    font-size: 12px;
+  }
+</style>

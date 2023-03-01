@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { generalStore } from '@/stores/general';
 import { userAuthentication } from '@/stores/authentication';
+import GsapTesting from '@/components/GsapTesting.vue'
 
 // use storeToRefs and fix al over the app
 import { storeToRefs } from 'pinia'
@@ -18,6 +19,9 @@ const generalStoreData = generalStore(),
 </script>
 
 <template>
+  <div>
+    <GsapTesting />
+  </div>
   <div class=" flex justify-center max-w-30">
     <form class="min-w-600p" v-on:keyup.enter="authenticationStore.loggedIn(loginInputData)">
       <div class="mb-4">

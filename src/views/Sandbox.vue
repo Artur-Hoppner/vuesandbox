@@ -1,10 +1,11 @@
 <script setup>
-import {onMounted, ref} from 'vue'
+import {onMounted, ref} from 'vue';
 import SvgIcon from '@/components/parts/SvgIcon.vue';
 import FallbackContent from '@/components/parts/FallbackContent.vue';
 import { useMouse } from '@/composables/mousePosition.js';
 import { debouncer } from '@/composables/debouncer.js';
-import StoreToRef from '@/components/StoreToRef.vue'
+import StoreToRef from '@/components/StoreToRef.vue';
+import gsap from 'gsap';
 const { positionX, positionY } = useMouse()
 
 // Debouncer testing:
@@ -38,12 +39,16 @@ const arrayOf = [],
 
 // Testing algoritm of what numbers from 1-100 that can both be divided på 3 and 5
 onMounted(() => {
-    
-    let numbertext = 0
-    for (let i = 0; i < 1000; ++i) {
-      numbertext = +i + 1
-      // console.log(numbertext)
-    arrayOf.push(numbertext)
+  gsap.to(".gtesting", {
+    duration: 5.5,
+    x: -400,
+  });
+
+  let numbertext = 0
+  for (let i = 0; i < 1000; ++i) {
+    numbertext = +i + 1
+    // console.log(numbertext)
+  arrayOf.push(numbertext)
   }
   
   for (let i = 0; i < 1000; ++i) {
@@ -58,13 +63,14 @@ onMounted(() => {
 
 <template>
   <div>
+    <h3 class="gtesting">GSAP testing</h3>
     <transition name="slide-fade">
       <h2>Hejsan</h2>
     </transition>
 
     <StoreToRef />
     <!-- {{ positionX }}{{ positionY }} -->
-    <button @click="debouncedFunction">Debouncer Function</button>
+    <button @click="debouncedFunction" class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded">Debouncer Function</button>
     <div >
       <!-- <img src="../assets/icons/charmander.ico" alt="">
       <img src="../assets/icons/mew.ico" alt=""> -->
@@ -73,11 +79,6 @@ onMounted(() => {
       <SvgIcon :svgOptions="testingThis" />
     </div> -->
 
-      <ul>
-        <li>Lexical Scope (get to in nested functions, down not up)</li>
-        <li>Closure</li>
-        <li>Higher order functions</li>
-      </ul>
     </div>
   </div>
 </template>

@@ -1,6 +1,19 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import InputAnimationGrid from '@/components/InputAnimationGrid.vue'
+import gsap from 'gsap'
+
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+function testing() {
+  gsap.to(".gsap-testing", {
+  duration: 2,
+  x: 300,
+  y: -500,
+  scrollTrigger: ".gsap-testing"
+})
+}
+
 
 const users = ref([
   {header: "Creative", bgColor: "bg-pink-400", position: "justify-center sm:justify-start sm:items-end"},
@@ -16,14 +29,22 @@ const users = ref([
   // {header: "11", bgColor: "bg-teal-300", position: "items-center justify-end sm:items-end"},
   // {header: "12", bgColor: "bg-amber-100", position: "items-center justify-center sm:justify-end sm:items-end"}
 ])
+
+onMounted(() => {
+//   gsap.to(".gsap-testing", {
+//   duration: 2,
+//   x: 300,
+//   y: -500,
+//   scrollTrigger: ".gsap-testing"
+// })
+})
 </script>
 
 <template>
   <div>
-    <div class="p-12 h-38 bg-teal-100">
+    <div class="p-12 h-38 border my-2">
       Hi and welcome to my sandbox.
     </div>
-    <a href="https://css-tricks.com/snippets/jquery/smooth-scrolling/">smooth-scrolling</a>
     <div class="p-12">
       <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, laudantium incidunt molestias in fugiat architecto perspiciatis facilis earum repudiandae vitae. Illum consequuntur totam maiores mollitia? Ad, voluptatibus similique. Tempore, corrupti! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae hic eos fugiat cum quis dolorum blanditiis in nesciunt. Libero debitis aut a tempora excepturi sequi adipisci, et repudiandae aliquam voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, pariatur vel soluta autem, labore at vero dolores, quas nam assumenda deleniti natus nesciunt temporibus inventore adipisci eum perferendis distinctio. Maxime.</h4>
     </div>
@@ -42,7 +63,7 @@ const users = ref([
         </ul>
       </div>
     </div>
-    <div class="w-full h-48 bg-green-500">
+    <div class="w-full h-48 border my-2">
       <h3>My Skills</h3>
       <ul class="grid grid-cols-4">
         <li>Vue 3</li>
@@ -66,9 +87,11 @@ const users = ref([
       </ul>
     </div>
 
-    <div class="w-full h-48 bg-teal-300">
+    <div class="w-full h-48 border my-2">
       <h4>Scroll and add elements to this container</h4>
     </div>
+    <button @click="testing">activating gsap testing</button>
+    <h2 class="gsap-testing">Testing Gsap</h2>
   </div>
 </template>
 

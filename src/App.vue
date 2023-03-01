@@ -5,7 +5,7 @@ import Footer from '@/components/Footer.vue';
 import CookieConsent from './components/parts/cookieConsentBanner.vue'
 import TerminalAnimation from './components/LandingpageAnimation.vue'
 
-const birthdayWishlist = false
+const birthdayWishlist = true
 
 </script>
 

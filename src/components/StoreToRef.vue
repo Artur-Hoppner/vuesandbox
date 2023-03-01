@@ -14,7 +14,7 @@ import { storeToRefs } from 'pinia';
 <template>
   <div>
     <h2>Counter: {{ standardCounderRef }} </h2>
-    <button @click="incrementButton">Press to Increment</button> 
+    <button @click="incrementButton" class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded">Increment storeToRef</button> 
 
   </div>
 </template>
