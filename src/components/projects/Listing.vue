@@ -94,7 +94,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="list-conatiner">
+  <div class="list-container">
     <div class="list-header-container">
       <div class="header-backdrop"></div>
       <h1>JOKE GENERATOR</h1>
@@ -150,14 +150,13 @@ onMounted(() => {
 </template>
 
 <style scoped>
-  .list-conatiner {
+  .list-container {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 1280px;
   }
 
   .list-header-container {
@@ -215,7 +214,7 @@ onMounted(() => {
     background-color: #58be75
   }
 
-  .list-conatiner ul {
+  .list-container ul {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -224,7 +223,7 @@ onMounted(() => {
     margin-top: 20px;
   }
 
-  .list-conatiner li {
+  .list-container li {
     position: relative;
     display: flex;
     flex-direction: column;
