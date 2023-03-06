@@ -11,10 +11,7 @@ const loadUserData = () => {
   })
 }
 
-    const userData = ref(await loadUserData())
-
-
-
+const userData = ref(await loadUserData())
 </script>
 
 

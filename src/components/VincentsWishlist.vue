@@ -64,16 +64,6 @@
           </div>
         </div>
       </a>
-      <a href="https://www.pricerunner.se/pl/72-3201067522/Leksaker/Lego-Harry-Potter-Hogwarts%E2%84%A2-oegonblick-Lektion-i-spaadomskonst-76396-priser" target="_blank" rel="noopener noreferrer" class="cursor-pointer mx-auto mt-1 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg border-2 border-gray-400 border-opacity-20">
-        <img class="h-48 w-full object-cover object-center" src="https://www.pricerunner.se/product/640x640/3004250665/Lego-Harry-Potter-Hogwarts%E2%84%A2-oegonblick-Lektion-i-spaadomskonst-76396.jpg" alt="Product Image" />
-        <div class="p-4">
-          <h2 class="mb-2 text-lg font-medium dark:text-white text-gray-900">LEGO Harry Potter 76396 Hogwarts ögonblick Lektion i spådomskonst</h2>
-          <p class="mb-2 text-base dark:text-gray-300 text-gray-700">Harry Potter Lego</p>
-          <div class="flex items-center">
-            <p class="mr-2 text-lg font-semibold text-gray-900 dark:text-white">289kr</p>
-          </div>
-        </div>
-      </a>
       <a href="https://www.pricerunner.se/pl/1583-4595469/Nintendo-Switch-spel/Pokemon-Let-s-Go-Eevee%21-priser" target="_blank" rel="noopener noreferrer" class="cursor-pointer mx-auto mt-1 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg border-2 border-gray-400 border-opacity-20">
         <img class="h-48 w-full object-cover object-center" src="https://www.pricerunner.se/product/640x640/3000334866/Pokemon-Let-s-Go--Eevee!.jpg" alt="Product Image" />
         <div class="p-4">
@@ -84,10 +74,32 @@
           </div>
         </div>
       </a>
+      <a href="https://www.pricerunner.se/pl/613-3201276626/Saellskapsspel/Pokemon-Sword-Shield-Astral-Radiance-Build-Battle-Stadium-priser" target="_blank" rel="noopener noreferrer" class="cursor-pointer mx-auto mt-1 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg border-2 border-gray-400 border-opacity-20">
+        <img class="h-48 w-full object-cover object-center" src="https://www.pricerunner.se/product/640x640/3004484881/Pokemon-Sword-Shield-Astral-Radiance-Build---Battle-Stadium.jpg" alt="Product Image" />
+        <div class="p-4">
+          <h2 class="mb-2 text-lg font-medium dark:text-white text-gray-900">Pokémon TCG: Sword & Shield - Brilliant Stars Build & Battle Stadium (2 däck, 12 boosters och mer)</h2>
+          <p class="mb-2 text-base dark:text-gray-300 text-gray-700">Plastfickor för pokemonkort</p>
+          <div class="flex items-center">
+            <p class="mr-2 text-lg font-semibold text-gray-900 dark:text-white">800kr</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://www.pricerunner.se/pl/613-3200347525/Saellskapsspel/Pokemon-Sword-Shield-Fusion-Strike-Elite-Trainer-Box-priser" target="_blank" rel="noopener noreferrer" class="cursor-pointer mx-auto mt-1 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg border-2 border-gray-400 border-opacity-20">
+        <img class="h-48 w-full object-cover object-center" src="https://www.pricerunner.se/product/640x640/3002728545/Pokemon-Sword-Shield-Fusion-Strike-Elite-Trainer-Box.jpg" alt="Product Image" />
+        <div class="p-4">
+          <h2 class="mb-2 text-lg font-medium dark:text-white text-gray-900">Pokémon Sword & Shield Fusion Strike Elite Trainer Box
+
+</h2>
+          <p class="mb-2 text-base dark:text-gray-300 text-gray-700">Plastfickor för pokemonkort</p>
+          <div class="flex items-center">
+            <p class="mr-2 text-lg font-semibold text-gray-900 dark:text-white">549kr</p>
+          </div>
+        </div>
+      </a>
     </div>
 
     
-    <!-- <ul>
+    <ul>
       <li>Gravitax 400-700kr</li>
       <li><a href="https://cdon.se/leksaker/pokemon-sword-shield-11-lost-origin-elite-trainer-box-p111482130?gclid=CjwKCAiA3KefBhByEiwAi2LDHAgZqlKLPeITEWQ_gobqoREsag8wraGdUopD4-sJN4hD3na6lj9gtxoC-AUQAvD_BwE" target="_blank" rel="noopener noreferrer">Giratina Box 500 kr</a></li>
       <li><a href="https://www.teknikproffset.se/leksaker-barn-babyprodukter/leksaker-2/sallskapsspel/barnspel/pokemon-tcg-pokemon-go-elite-trainer-box?gclid=CjwKCAiA3KefBhByEiwAi2LDHFaobr-lC1OOzeA04A5LmRlAydAreDpCZOt6SO_kPmcrQxOsyJbPEhoCFDQQAvD_BwE" target="_blank" rel="noopener noreferrer">Pokémon TCG: Pokémon GO - Elite Trainer Box 500kr </a></li>
@@ -97,7 +109,7 @@
     <li><a href="https://toyspace.se/pokemon-tcg-swsh10-astral-radiance-build-and-battle-stadium-stor-lada-med-kort-pok85040" target="_blank" rel="noopener noreferrer">Pokémon TCG: Sword & Shield - Brilliant Stars Build & Battle Stadium</a></li>
     eller
     <li><a href="https://www.amazon.se/Pok%C3%A9mon-TCG-Brilliant-Stadium-Boosters/dp/B09L5G7LKW/ref=asc_df_B09L5G7LKW/?tag=shpngadsglede-21&linkCode=df0&hvadid=476425745949&hvpos=&hvnetw=g&hvrand=15103660050916488645&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1012228&hvtargid=pla-1636004128225&psc=1" target="_blank" rel="noopener noreferrer">Pokémon TCG: Sword & Shield - Brilliant Stars Build & Battle Stadium</a></li>
-    <p></p> -->
+    <p></p>
   </div>
 </template>
 

@@ -1,10 +1,8 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import InputAnimationGrid from '@/components/InputAnimationGrid.vue'
 import gsap from 'gsap'
 
-import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 function testing() {
   gsap.to(".gsap-testing", {
   duration: 2,
@@ -30,14 +28,6 @@ const users = ref([
   // {header: "12", bgColor: "bg-amber-100", position: "items-center justify-center sm:justify-end sm:items-end"}
 ])
 
-onMounted(() => {
-//   gsap.to(".gsap-testing", {
-//   duration: 2,
-//   x: 300,
-//   y: -500,
-//   scrollTrigger: ".gsap-testing"
-// })
-})
 </script>
 
 <template>
@@ -90,7 +80,7 @@ onMounted(() => {
     <div class="w-full h-48 border my-2">
       <h4>Scroll and add elements to this container</h4>
     </div>
-    <button @click="testing">activating gsap testing</button>
+    <button class="custor-pointer my-12" @click="testing">activating gsap testing</button>
     <h2 class="gsap-testing">Testing Gsap</h2>
   </div>
 </template>
