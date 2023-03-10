@@ -1,37 +1,83 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import InputAnimationGrid from '@/components/InputAnimationGrid.vue'
 import gsap from 'gsap'
-
-function testing() {
-  gsap.to(".gsap-testing", {
-  duration: 2,
-  x: 300,
-  y: -500,
-  scrollTrigger: ".gsap-testing"
-})
-}
-
+import ProfilePicture from '@/components/parts/SvgIcon.vue'
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const users = ref([
-  {header: "Creative", bgColor: "bg-pink-400", position: "justify-center sm:justify-start sm:items-end"},
-  {header: "Challenging", bgColor: "bg-lime-50", position: "items-center sm:items-center"},
-  {header: "3", bgColor: "bg-amber-200", position: "justify-end sm:justify-start"},
-  {header: "4", bgColor: "bg-indigo-300", position: "items-end justify-center sm:items-center"},
-  {header: "5", bgColor: "bg-zinc-300", position: "justify-center sm:items-end"},
-  {header: "6", bgColor: "bg-sky-300", position: "items-center sm:items-center"},
-  // {header: "7", bgColor: "bg-purple-300", position: "justify-end sm:justify-end sm:items-center"},
-  // {header: "8", bgColor: "bg-red-200", position: "items-center justify-center sm:justify-end sm:items-start"},
-  // {header: "9", bgColor: "bg-lime-400", position: "justify-center sm:justify-end"},
-  // {header: "10", bgColor: "bg-orange-200",position: "items-center sm:justify-end sm:items-end" },
-  // {header: "11", bgColor: "bg-teal-300", position: "items-center justify-end sm:items-end"},
-  // {header: "12", bgColor: "bg-amber-100", position: "items-center justify-center sm:justify-end sm:items-end"}
-])
+        {header: "Creative", bgColor: "bg-pink-400", position: "justify-center sm:justify-start sm:items-end"},
+        {header: "Challenging", bgColor: "bg-lime-50", position: "items-center sm:items-center"},
+        {header: "3", bgColor: "bg-amber-200", position: "justify-end sm:justify-start"},
+        {header: "4", bgColor: "bg-indigo-300", position: "items-end justify-center sm:items-center"},
+        {header: "5", bgColor: "bg-zinc-300", position: "justify-center sm:items-end"},
+        {header: "6", bgColor: "bg-sky-300", position: "items-center sm:items-center"},
+        // {header: "7", bgColor: "bg-purple-300", position: "justify-end sm:justify-end sm:items-center"},
+        // {header: "8", bgColor: "bg-red-200", position: "items-center justify-center sm:justify-end sm:items-start"},
+        // {header: "9", bgColor: "bg-lime-400", position: "justify-center sm:justify-end"},
+        // {header: "10", bgColor: "bg-orange-200",position: "items-center sm:justify-end sm:items-end" },
+        // {header: "11", bgColor: "bg-teal-300", position: "items-center justify-end sm:items-end"},
+        // {header: "12", bgColor: "bg-amber-100", position: "items-center justify-center sm:justify-end sm:items-end"}
+      ]),
+      profilePicture = ref({svgFile: "ProfilePicture", fill: "white", ajustToHeight: "100%"})
+
+
+onMounted(() => {
+  gsap.to(".gsap-testing-activator", {
+    scrollTrigger: {
+      trigger: ".gsap-testing-activator",
+      pinnedContainer: "main",
+      start: "top center",
+      scrub: true,
+      pin: "main",
+      markers: "true",
+      toggleAction: " restart none none none",
+      // toggleClass: "pin"
+    }
+  })
+
+  gsap.to(".gsap-testing-activator", {
+    scrollTrigger: {
+      trigger: ".fade-in",
+      pinnedContainer: "main",
+      start: "top 0",
+      end: "bottom 0",
+      scrub: true,
+      pin: "main",
+      markers: "true",
+      toggleAction: " restart none none none",
+      toggleClass: "pin"
+    }
+  })
+  // gsap.to(section.querySelector(".gsap-testing-activator"), {
+  //   opacity: 1,
+  //   scrollTrigger: {
+  //     trigger: section,
+  //     pinnedContainer: "main",
+  //     start: "top 0",
+  //     end: "bottom 0",
+  //     pin: "main",
+  //     start: "center center",
+  //     end: "+=300",
+  //     toggleActions: "play none none reverse"
+  //   }
+  // });
+})
 
 </script>
 
 <template>
+
   <div>
+    <div class="h-40"></div>
+    <div class="h-80 bg-primary">
+      <ProfilePicture :svgOptions="profilePicture" />
+
+    </div>
+    <div class="h-40 bg-secondary">
+      <ProfilePicture :svgOptions="profilePicture" />
+    </div>
     <div class="p-12 h-38 border my-2">
       Hi and welcome to my sandbox.
     </div>
@@ -55,6 +101,7 @@ const users = ref([
     </div>
     <div class="w-full h-48 border my-2">
       <h3>My Skills</h3>
+      <!-- list of items -->
       <ul class="grid grid-cols-4">
         <li>Vue 3</li>
         <li>Pinia</li>
@@ -76,14 +123,37 @@ const users = ref([
         <li>GA</li>
       </ul>
     </div>
-
-    <div class="w-full h-48 border my-2">
-      <h4>Scroll and add elements to this container</h4>
-    </div>
-    <button class="custor-pointer my-12" @click="testing">activating gsap testing</button>
+    <div class="h-80"></div>
+    <div class="h-80"></div>
     <h2 class="gsap-testing">Testing Gsap</h2>
+    <div class="h-80"></div>
+    <div class="gsap-testing-activator h-80 bg-teal-200 w-full border my-2">
+      <h2>What is this?</h2>
+      <!-- <ProfilePicture :svgOptions="profilePicture" /> -->
+      <p></p>
+      <h4>Scroll and add elements to this container</h4>
+      <div class="fade-in h-20 w-20 bg-primary"></div>
+      <RouterLink to="/sandbox">See my Sandbox</RouterLink>
+    </div>
+    <!-- <button class="custor-pointer my-12" @click="testing">activating gsap testing</button> -->
+    <div class="h-80"></div>
+    <div class="h-80"></div>
+    <div class="h-80"></div>
+    <div class="h-80"></div>
+    <div class="h-80"></div>
   </div>
 </template>
 
 <style scoped>
+
+
+.pin {
+  position: fixed;
+  bottom: 0;
+  /* variable for border */
+  left: 2.5rem;
+  background-color: green;
+  width: calc(100% - 5rem);
+}
+
 </style>

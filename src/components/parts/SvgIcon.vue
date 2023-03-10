@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 import { defineAsyncComponent } from 'vue';
 
 export default {
@@ -17,39 +17,42 @@ export default {
   },
 
 };
+</script> -->
+
+<script setup>
+import { defineAsyncComponent } from 'vue'
+const props = defineProps({
+  svgOptions: {
+    type: Object,
+    required: true
+  }
+  }),
+      SvgFile= defineAsyncComponent(() =>
+        import(`../../assets/icons/${props.svgOptions.svgFile}.vue`)
+      )
+
+      console.log(props.svgOptions.ajustToHeight)
+
+  let testing = props.svgOptions.ajustToHeight
+
+  
 </script>
 
 <template>
-  <component :is="dynamicComponent" />
+  <div class="global-svg-icon">
+    <SvgFile />
+  </div>
 </template>
 
-<style scoped>
-  svg {
-    height: v-bind(svgOptions.ajustToHeight);
-    width: v-bind(svgOptions.ajustToHeight);
-    fill: v-bind(svgOptions.fill);
+<style>
+  .global-svg-icon {
+    height: v-bind(props.svgOptions.ajustToHeight);
+    width: v-bind(props.svgOptions.ajustTowidth);
   }
 
-  .st1{
-/*   stroke-dasharray: 20; */
-  stroke-dasharray: 120;
-  stroke-dashoffset: 120;
-  fill:none;
-  stroke:#FCE070;
-  stroke-width:29.3486;
-  stroke-miterlimit:10;
-  animation: sun 1s;
-  animation-iteration-count: infinite;
-}
-@keyframes sun {
-  0% {
-    stroke-dashoffset: 120;
+  .global-svg-icon svg {
+    height: 100%;
+    width: 100%;
+    fill: v-bind(props.svgOptions.fill);
   }
-  50% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: -120;
-  }
-}
 </style>

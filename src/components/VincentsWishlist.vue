@@ -2,8 +2,12 @@
   import { ref, onMounted } from 'vue'
   import SvgIcon from '@/components/parts/SvgIcon.vue';
 
-  const loadingScreen = ref({svgFile: "pikachu", fill: "white", ajustToHeight: "100%"})
-
+  const loadingScreen = ref({
+          svgFile: "pikachu",
+          fill: "white",
+          ajustToHeight: "100%",
+          ajustTowidth: "100%"
+        })
 
   onMounted(() => {
     document.body.style.overflow = "hidden"
@@ -20,9 +24,12 @@
   </div>
 
   <div class="bg-gray-50 min-h-screen sm:px-12 py-6">
-    <h1 class="text-3xl">Vincents önskelista</h1>
-    <p class="text-1xl"> Hej, snart är det min födelsedag. Här är min önskelista!</p>
-    <p class="text-xs text-gray-500  color-primary">Kolla gärna av innan ni köper så inte olika personer köper samma</p>
+    <div class="w-full relative flex justify-center mb-2">
+      <div class=" absolute top-0 w-96 bg-gray-400 rotate-2 h-12"></div>
+        <h1 class="font-bold text-white   leading-10 text-3xl z-10">Vincents önskelista</h1>
+    </div>
+    <p class="text-1xl p-4"> Hej, snart är det min födelsedag. Här är min önskelista!</p>
+    <p class="text-xs text-gray-500  color-primary px-8">Kolla gärna av innan ni köper så inte olika personer köper samma</p>
     <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 lx:grid-cols-5 gap-10 mt-6">
       <a href="https://speltrollet.se/86-pokemon/pokemon-sword-shield-105-pokmon-go-elite-trainer-box" target="_blank" rel="noopener noreferrer" class="cursor-pointer mx-auto mt-1 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg border-2 border-gray-400 border-opacity-20">
         <img class="h-48 w-full object-cover object-center" src="https://quickbutik.imgix.net/20406I/products/6299e1e828c0c.jpeg" alt="Product Image" />
@@ -64,6 +71,16 @@
           </div>
         </div>
       </a>
+      <a href="https://speltrollet.se/86-pokemon/32-pokemon-tillbehor/ultra-pro-single-screw-screwdown-holder-2st" target="_blank" rel="noopener noreferrer" class="cursor-pointer mx-auto mt-1 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg border-2 border-gray-400 border-opacity-20">
+        <img class="h-48 w-full object-cover object-center" src="https://quickbutik.imgix.net/20406I/products/63eca0c7dc95f.png?auto=format" alt="Product Image" />
+        <div class="p-4">
+          <h2 class="mb-2 text-lg font-medium dark:text-white text-gray-900">Ultra Pro Single-Screw Screwdown Holder (2st)</h2>
+          <p class="mb-2 text-base dark:text-gray-300 text-gray-700">Plastfickor för pokemonkort.</p>
+          <div class="flex items-center">
+            <p class="mr-2 text-lg font-semibold text-gray-900 dark:text-white">39kr</p>
+          </div>
+        </div>
+      </a>
       <a href="https://www.pricerunner.se/pl/1583-4595469/Nintendo-Switch-spel/Pokemon-Let-s-Go-Eevee%21-priser" target="_blank" rel="noopener noreferrer" class="cursor-pointer mx-auto mt-1 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg border-2 border-gray-400 border-opacity-20">
         <img class="h-48 w-full object-cover object-center" src="https://www.pricerunner.se/product/640x640/3000334866/Pokemon-Let-s-Go--Eevee!.jpg" alt="Product Image" />
         <div class="p-4">
@@ -88,28 +105,22 @@
         <img class="h-48 w-full object-cover object-center" src="https://www.pricerunner.se/product/640x640/3002728545/Pokemon-Sword-Shield-Fusion-Strike-Elite-Trainer-Box.jpg" alt="Product Image" />
         <div class="p-4">
           <h2 class="mb-2 text-lg font-medium dark:text-white text-gray-900">Pokémon Sword & Shield Fusion Strike Elite Trainer Box
-
-</h2>
+          </h2>
           <p class="mb-2 text-base dark:text-gray-300 text-gray-700">Plastfickor för pokemonkort</p>
           <div class="flex items-center">
             <p class="mr-2 text-lg font-semibold text-gray-900 dark:text-white">549kr</p>
           </div>
         </div>
       </a>
+      <a class="cursor-pointer mx-auto mt-1 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg border-2 border-gray-400 border-opacity-20">
+        <img class="h-48 w-full object-cover object-center" src="https://t3.ftcdn.net/jpg/01/61/92/08/240_F_161920891_NPxLoz6auG3lodFH3LRRG9yevXssy1CB.jpg" alt="Product Image" />
+        <div class="p-4">
+          <h2 class="mb-2 text-lg font-medium dark:text-white text-gray-900">FatCat</h2>
+          <p class="mb-2 text-base dark:text-gray-300 text-gray-700">Vincent önskar sig lite kontanter</p>
+        </div>
+      </a>
     </div>
 
-    
-    <ul>
-      <li>Gravitax 400-700kr</li>
-      <li><a href="https://cdon.se/leksaker/pokemon-sword-shield-11-lost-origin-elite-trainer-box-p111482130?gclid=CjwKCAiA3KefBhByEiwAi2LDHAgZqlKLPeITEWQ_gobqoREsag8wraGdUopD4-sJN4hD3na6lj9gtxoC-AUQAvD_BwE" target="_blank" rel="noopener noreferrer">Giratina Box 500 kr</a></li>
-      <li><a href="https://www.teknikproffset.se/leksaker-barn-babyprodukter/leksaker-2/sallskapsspel/barnspel/pokemon-tcg-pokemon-go-elite-trainer-box?gclid=CjwKCAiA3KefBhByEiwAi2LDHFaobr-lC1OOzeA04A5LmRlAydAreDpCZOt6SO_kPmcrQxOsyJbPEhoCFDQQAvD_BwE" target="_blank" rel="noopener noreferrer">Pokémon TCG: Pokémon GO - Elite Trainer Box 500kr </a></li>
-      <li><a href="https://www.spelochsant.se/products/view/id/42601?ref=prisjakt">Pokemon TCG Sword & Shield Fusion Strike Elite Trainer Box 549 Kr</a></li>
-    </ul>
-    <p>arceusboxen från Mamma och Pappa</p>
-    <li><a href="https://toyspace.se/pokemon-tcg-swsh10-astral-radiance-build-and-battle-stadium-stor-lada-med-kort-pok85040" target="_blank" rel="noopener noreferrer">Pokémon TCG: Sword & Shield - Brilliant Stars Build & Battle Stadium</a></li>
-    eller
-    <li><a href="https://www.amazon.se/Pok%C3%A9mon-TCG-Brilliant-Stadium-Boosters/dp/B09L5G7LKW/ref=asc_df_B09L5G7LKW/?tag=shpngadsglede-21&linkCode=df0&hvadid=476425745949&hvpos=&hvnetw=g&hvrand=15103660050916488645&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1012228&hvtargid=pla-1636004128225&psc=1" target="_blank" rel="noopener noreferrer">Pokémon TCG: Sword & Shield - Brilliant Stars Build & Battle Stadium</a></li>
-    <p></p>
   </div>
 </template>
 
@@ -117,6 +128,7 @@
 <style scoped>
 
 .loading-screen {
+  position: fixed;
   animation:2s fadeIn;
   animation-fill-mode: forwards;
   animation-delay: 0.5s;

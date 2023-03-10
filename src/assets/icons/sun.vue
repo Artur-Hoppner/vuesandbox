@@ -23,33 +23,5 @@
 
 </template>
 <style>
-svg {
-  width: 20%;
-}
-.st0{
-  fill:#fefefe;
-}
-.st1{
-/*   stroke-dasharray: 20; */
-  stroke-dasharray: 120;
-  stroke-dashoffset: 120;
-  fill:none;
-  stroke:#ffffff;
-  stroke-width:29.3486;
-  stroke-miterlimit:10;
-  animation: sun 1s;
-  animation-iteration-count: infinite;
-}
 
-@keyframes sun {
-  0% {
-    stroke-dashoffset: 120;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: -120;
-  }
-}
 </style>

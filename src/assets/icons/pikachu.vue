@@ -132,8 +132,8 @@
 	.st0{fill:#FFB000;stroke:#33363A;stroke-width:4;stroke-miterlimit:10;}
 
 svg{
-  width: 50%;
-  margin-top: 150px;
+  /* width: 50%;
+  margin-top: 150px; */
 }
 
 	.st1, .st11{fill:#FFD400;}

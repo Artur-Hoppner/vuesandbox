@@ -2,6 +2,7 @@
 import {onMounted, ref} from 'vue';
 import SvgIcon from '@/components/parts/SvgIcon.vue';
 import FallbackContent from '@/components/parts/FallbackContent.vue';
+import Listing from '@/components/projects/Listing.vue'
 import { useMouse } from '@/composables/mousePosition.js';
 import { debouncer } from '@/composables/debouncer.js';
 import StoreToRef from '@/components/StoreToRef.vue';
@@ -22,7 +23,6 @@ function saveInput(parameter){
 // Testing Suspense function
 const arrayOf = [],
       answerOfArrays = [],
-      testingThis = ref({svgFile: "pikachu", fill: "white", ajustToHeight: "100%"}),
       timeOutSuspense = () => {
         return new Promise((resolve) => {
           setTimeout(() => {
@@ -69,17 +69,11 @@ onMounted(() => {
     </transition>
 
     <StoreToRef />
-    <!-- {{ positionX }}{{ positionY }} -->
     <button @click="debouncedFunction" class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded">Debouncer Function</button>
-    <div >
-      <!-- <img src="../assets/icons/charmander.ico" alt="">
-      <img src="../assets/icons/mew.ico" alt=""> -->
 
-    <!-- <div class="loading-screen">
-      <SvgIcon :svgOptions="testingThis" />
-    </div> -->
+    <!-- Refactor code and migraste css to tailwind/sass -->
+    <Listing />
 
-    </div>
   </div>
 </template>
 
