@@ -1,46 +1,38 @@
-<!-- <script>
-import { defineAsyncComponent } from 'vue';
-
-export default {
-  props: {
-    svgOptions: {
-      type: Object,
-      required: true,
-    },
-  },
-
-  computed: {
-    dynamicComponent() { 
-      const filepath = this.svgOptions.svgFile;
-      return defineAsyncComponent(() => import(`../../assets/icons/${filepath}.vue`));
-    },
-  },
-
-};
-</script> -->
-
 <script setup>
-import { defineAsyncComponent } from 'vue'
+import { shallowRef, watchEffect } from 'vue'
+
 const props = defineProps({
-  svgOptions: {
-    type: Object,
-    required: true
-  }
-  }),
-      SvgFile= defineAsyncComponent(() =>
-        import(`../../assets/icons/${props.svgOptions.svgFile}.vue`)
-      )
+        svgOptions: {
+          type: Object,
+          required: true
+        }
+      }),
+      currentIcon = shallowRef(null)
 
-      console.log(props.svgOptions.ajustToHeight)
+watchEffect(() => {
+  import(`../../assets/icons/${props.svgOptions.svgFile}.vue`).then(val => {
+    currentIcon.value = val.default
+  })
+})
+// watchEffect updates icon so dont need code bellow "Probably".
+// import(`../../assets/icons/${props.svgOptions.svgFile}.vue`).then(val => {
+//   // val is a Module has default
+//   currentIcon.value = val.default
+// })
 
-  let testing = props.svgOptions.ajustToHeight
 
-  
+//____________________________________________
+
+// Alternative to importing.
+// SvgFile = shallowRef(defineAsyncComponent(() =>
+//   import(`../../assets/icons/${props.svgOptions.svgFile}.vue`)
+// )),
 </script>
 
 <template>
   <div class="global-svg-icon">
-    <SvgFile />
+    <!-- <SvgFile /> -->
+    <component :is="currentIcon" />
   </div>
 </template>
 

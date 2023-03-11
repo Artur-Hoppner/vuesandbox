@@ -22,6 +22,10 @@ const users = ref([
       ]),
       profilePicture = ref({svgFile: "ProfilePicture", fill: "white", ajustToHeight: "100%"})
 
+function testingRefss() {
+  profilePicture.value.svgFile = "github"
+  console.log(profilePicture.value.svgFile)
+}
 
 onMounted(() => {
   gsap.to(".gsap-testing-activator", {
@@ -64,19 +68,19 @@ onMounted(() => {
   //   }
   // });
 })
-
 </script>
 
 <template>
 
   <div>
+      <button @click="testingRefss">Tensjghfdsfdksj</button>
     <div class="h-40"></div>
     <div class="h-80 bg-primary">
       <ProfilePicture :svgOptions="profilePicture" />
 
     </div>
     <div class="h-40 bg-secondary">
-      <ProfilePicture :svgOptions="profilePicture" />
+      <!-- <ProfilePicture :svgOptions="profilePicture" /> -->
     </div>
     <div class="p-12 h-38 border my-2">
       Hi and welcome to my sandbox.

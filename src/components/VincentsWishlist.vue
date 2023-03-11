@@ -7,9 +7,10 @@
           fill: "white",
           ajustToHeight: "100%",
           ajustTowidth: "100%"
-        })
+        }),
+        daysToBirthday = Math.floor(((new Date("APR 9, 2023 00:00:00").getTime()) - (new Date().getTime())) / (1000 * 60 * 60 * 24))
 
-  onMounted(() => {
+        onMounted(() => {
     document.body.style.overflow = "hidden"
 
     setTimeout(() => {
@@ -25,10 +26,10 @@
 
   <div class="bg-gray-50 min-h-screen sm:px-12 py-6">
     <div class="w-full relative flex justify-center mb-2">
-      <div class=" absolute top-0 w-96 bg-gray-400 rotate-2 h-12"></div>
-        <h1 class="font-bold text-white   leading-10 text-3xl z-10">Vincents önskelista</h1>
+      <div class=" absolute -top-3 w-96 bg-gray-400 rotate-2 h-16"></div>
+      <h1 class="font-bold text-white   leading-10 text-3xl z-10">Vincents önskelista</h1>
     </div>
-    <p class="text-1xl p-4"> Hej, snart är det min födelsedag. Här är min önskelista!</p>
+    <p class="text-1xl p-4"> Hej, om {{ daysToBirthday }} dagar är det min födelsedag. Här är min önskelista!</p>
     <p class="text-xs text-gray-500  color-primary px-8">Kolla gärna av innan ni köper så inte olika personer köper samma</p>
     <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 lx:grid-cols-5 gap-10 mt-6">
       <a href="https://speltrollet.se/86-pokemon/pokemon-sword-shield-105-pokmon-go-elite-trainer-box" target="_blank" rel="noopener noreferrer" class="cursor-pointer mx-auto mt-1 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg border-2 border-gray-400 border-opacity-20">

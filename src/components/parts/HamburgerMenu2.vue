@@ -7,7 +7,6 @@ import { userAuthentication } from '@/stores/authentication';
 const authentication = userAuthentication()
 const routerUserLogin = ref("Login")
 function menuOnClick() {
-  console.log("testing")
   document.getElementById("menu-bar").classList.toggle("change");
   document.getElementById("nav").classList.toggle("change");
   document.getElementById("menu-bg").classList.toggle("change-bg");
