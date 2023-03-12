@@ -1,6 +1,5 @@
 <script setup>
   import { ref } from 'vue'
-  import CopyRight from './FooterCopyRight.vue';
   import SvgIcon from '@/components/parts/SvgIcon.vue';
 
   const githubIcon = ref({svgFile: "github", fill: "black", ajustToHeight: "26px", link: "https://github.com/Artur-Hoppner/"});
@@ -16,7 +15,7 @@
     <a :href="lionkedinIcon.link" target="_blank" rel="noopener noreferrer" class="block w-0">
       <SvgIcon class="hover:fill-slate-300 cursor-pointer" :svgOptions="lionkedinIcon" />
     </a>
-    <CopyRight :dateYear="dateYear"   />
+    {{dateYear}}
   </footer>
 </template>
 

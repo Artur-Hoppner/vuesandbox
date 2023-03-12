@@ -2,7 +2,7 @@
 // SVG HeartFull is better placed within modal component (2 places) to toggle favorites if statemanager existed.
 // But is in this component to avoid emiting to grandparent
 // Easier to follow logic with this code, but need to change in 2 components
-import HeartFull from '@/components/icons/HeartFull.vue'
+import HeartFull from '@/assets/icons/HeartFull.vue'
 import Modal from '@/components/projects/Modal.vue'
 
 // Different way to declare props compared to: props = defineProps(['jokes', 'categoryColor', 'index'])
@@ -61,7 +61,7 @@ function uppdateFavorite() {
   .list-bottom-part {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     min-height: 80px;
     width: 100%;
     padding: 0 10px

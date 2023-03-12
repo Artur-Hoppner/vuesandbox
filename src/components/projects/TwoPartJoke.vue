@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import Modal from '@/components/projects/Modal.vue'
-import HeartFull from '@/components/icons/HeartFull.vue'
+import HeartFull from '@/assets/icons/HeartFull.vue'
 
 let toggleJoke = ref(false)
 const props = defineProps(['jokes', 'categoryColor', 'index']),

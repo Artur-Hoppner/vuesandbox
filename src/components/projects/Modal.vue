@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import Cross from '@/components/icons/Cross.vue'
+import Cross from '@/assets/icons/Cross.vue'
 
 const activeModal = ref(false),
       props = defineProps(['color'])

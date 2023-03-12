@@ -1,10 +1,8 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import InputAnimationGrid from '@/components/InputAnimationGrid.vue'
-import gsap from 'gsap'
 import ProfilePicture from '@/components/parts/SvgIcon.vue'
-import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import AnimatedScrolltrigger from '@/components/AnimatedScrolltrigger.vue'
 
 const users = ref([
         {header: "Creative", bgColor: "bg-pink-400", position: "justify-center sm:justify-start sm:items-end"},
@@ -21,59 +19,10 @@ const users = ref([
         // {header: "12", bgColor: "bg-amber-100", position: "items-center justify-center sm:justify-end sm:items-end"}
       ]),
       profilePicture = ref({svgFile: "ProfilePicture", fill: "white", ajustToHeight: "100%"})
-
-function testingRefss() {
-  profilePicture.value.svgFile = "github"
-  console.log(profilePicture.value.svgFile)
-}
-
-onMounted(() => {
-  gsap.to(".gsap-testing-activator", {
-    scrollTrigger: {
-      trigger: ".gsap-testing-activator",
-      pinnedContainer: "main",
-      start: "top center",
-      scrub: true,
-      pin: "main",
-      markers: "true",
-      toggleAction: " restart none none none",
-      // toggleClass: "pin"
-    }
-  })
-
-  gsap.to(".gsap-testing-activator", {
-    scrollTrigger: {
-      trigger: ".fade-in",
-      pinnedContainer: "main",
-      start: "top 0",
-      end: "bottom 0",
-      scrub: true,
-      pin: "main",
-      markers: "true",
-      toggleAction: " restart none none none",
-      toggleClass: "pin"
-    }
-  })
-  // gsap.to(section.querySelector(".gsap-testing-activator"), {
-  //   opacity: 1,
-  //   scrollTrigger: {
-  //     trigger: section,
-  //     pinnedContainer: "main",
-  //     start: "top 0",
-  //     end: "bottom 0",
-  //     pin: "main",
-  //     start: "center center",
-  //     end: "+=300",
-  //     toggleActions: "play none none reverse"
-  //   }
-  // });
-})
 </script>
 
 <template>
-
   <div>
-      <button @click="testingRefss">Tensjghfdsfdksj</button>
     <div class="h-40"></div>
     <div class="h-80 bg-primary">
       <ProfilePicture :svgOptions="profilePicture" />
@@ -129,16 +78,7 @@ onMounted(() => {
     </div>
     <div class="h-80"></div>
     <div class="h-80"></div>
-    <h2 class="gsap-testing">Testing Gsap</h2>
-    <div class="h-80"></div>
-    <div class="gsap-testing-activator h-80 bg-teal-200 w-full border my-2">
-      <h2>What is this?</h2>
-      <!-- <ProfilePicture :svgOptions="profilePicture" /> -->
-      <p></p>
-      <h4>Scroll and add elements to this container</h4>
-      <div class="fade-in h-20 w-20 bg-primary"></div>
-      <RouterLink to="/sandbox">See my Sandbox</RouterLink>
-    </div>
+    <AnimatedScrolltrigger />
     <!-- <button class="custor-pointer my-12" @click="testing">activating gsap testing</button> -->
     <div class="h-80"></div>
     <div class="h-80"></div>
@@ -148,16 +88,5 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
-
-
-.pin {
-  position: fixed;
-  bottom: 0;
-  /* variable for border */
-  left: 2.5rem;
-  background-color: green;
-  width: calc(100% - 5rem);
-}
-
+<style scoped lang="scss">
 </style>

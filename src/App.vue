@@ -4,6 +4,8 @@ import VincentsWishlist from '@/components/VincentsWishlist.vue';
 import Footer from '@/components/Footer.vue';
 import CookieConsent from './components/parts/cookieConsentBanner.vue'
 import TerminalAnimation from './components/LandingpageAnimation.vue'
+import Loader from '@/components/parts/Loader.vue'
+
 
 const birthdayWishlist = true
 
@@ -22,7 +24,7 @@ const birthdayWishlist = true
               <component :is="Component" :key="$route.path"></component>
               <template #fallback>
                 <!-- use suspense on components later on -->
-                <div>Loading...</div>
+                <Loader/>
               </template>
             </suspense>
           </transition>

@@ -12,13 +12,9 @@ const svgLightMode = ref({svgFile: "lightmode", fill: "black", ajustToHeight: "2
 
 <template>
   <header class="flex ">
-    <!-- // Experiment so that you only use 1 SvgIcon -->
+    <!-- // Uppdate to just use one -->
     <SvgIcon class="cursor-pointer absolute top-2 right-16 m-2 hover:fill-slate-600" v-if="generalStoreData.darkmodeToggle" :svgOptions="svgDarkMode" @click="generalStoreData.toggleDarkmode()" />
     <SvgIcon class="cursor-pointer absolute top-2 right-16 m-2 hover:fill-slate-300" v-if="!generalStoreData.darkmodeToggle" :svgOptions="svgLightMode" @click="generalStoreData.toggleDarkmode()" />
-
-    <!-- fix logo size and ajustment to svg file -->
-    <!-- <SvgIcon class="" :svgOptions="pageLogo" /> -->
     <Nav />
-    <!-- <img  alt="Vue logo" class="logo p-1.5 rounded-full bg-primary" src="@/assets/ahlogo.png" width="80" height="80" /> -->
   </header>
 </template>

@@ -1,4 +1,7 @@
 <script setup>
+// This component uses intersectionObserver to controll how elements are animated:
+// Move intersectionObserver to parent and use items in array to send in array of object instead of now that function is callet the number of items.
+
 import { ref, onMounted } from 'vue'
 import { observeIntersections } from '@/composables/intersectionObserver.js';
 
