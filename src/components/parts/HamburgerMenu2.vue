@@ -16,9 +16,9 @@ function menuOnClick() {
 <template>
   <div id="menu" class="flex flex-col items-end">
     <div id="menu-bar" @click="menuOnClick">
-      <div id="bar1" class="bar bg-primary"></div>
-      <div id="bar2" class="bar bg-primary"></div>
-      <div id="bar3" class="bar bg-primary"></div>
+      <div id="bar1" class="bar bg-white"></div>
+      <div id="bar2" class="bar bg-white"></div>
+      <div id="bar3" class="bar bg-white"></div>
     </div>
     <nav class="nav" id="nav">
       <ul class="text-left">
@@ -29,7 +29,7 @@ function menuOnClick() {
       </ul>
     </nav> 
   </div>
-  <div class="menu-bg bg-primary opacity-90" id="menu-bg"></div>
+  <div class="menu-bg bg-secondary opacity-90" id="menu-bg"></div>
 </template>
 
 <style lang="scss" scoped>

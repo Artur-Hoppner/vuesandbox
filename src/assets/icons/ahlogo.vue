@@ -27,3 +27,9 @@ svg {
   }
 }
 </style>
+
+
+<script>
+// var path = document.querySelector('.path');
+// var length = path.getTotalLength();
+</script>

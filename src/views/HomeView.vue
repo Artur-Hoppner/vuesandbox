@@ -1,14 +1,15 @@
 <script setup>
 import { ref } from 'vue'
 import InputAnimationGrid from '@/components/InputAnimationGrid.vue'
-import ProfilePicture from '@/components/parts/SvgIcon.vue'
+import Skillsets from '@/components/Skillsets.vue'
+import SvgIcon from '@/components/parts/SvgIcon.vue'
 import AnimatedScrolltrigger from '@/components/AnimatedScrolltrigger.vue'
 
 const users = ref([
-        {header: "Creative", bgColor: "bg-pink-400", position: "justify-center sm:justify-start sm:items-end"},
+        {header: "Its creative", bgColor: "bg-pink-400", position: "justify-center sm:justify-start sm:items-end"},
         {header: "Challenging", bgColor: "bg-lime-50", position: "items-center sm:items-center"},
-        {header: "3", bgColor: "bg-amber-200", position: "justify-end sm:justify-start"},
-        {header: "4", bgColor: "bg-indigo-300", position: "items-end justify-center sm:items-center"},
+        {header: "Always new things to learn", bgColor: "bg-amber-200", position: "justify-end sm:justify-start"},
+        {header: "Fun", bgColor: "bg-indigo-300", position: "items-end justify-center sm:items-center"},
         {header: "5", bgColor: "bg-zinc-300", position: "justify-center sm:items-end"},
         {header: "6", bgColor: "bg-sky-300", position: "items-center sm:items-center"},
         // {header: "7", bgColor: "bg-purple-300", position: "justify-end sm:justify-end sm:items-center"},
@@ -18,28 +19,43 @@ const users = ref([
         // {header: "11", bgColor: "bg-teal-300", position: "items-center justify-end sm:items-end"},
         // {header: "12", bgColor: "bg-amber-100", position: "items-center justify-center sm:justify-end sm:items-end"}
       ]),
-      profilePicture = ref({svgFile: "ProfilePicture", fill: "white", ajustToHeight: "100%"})
+      profilePicture = ref({svgFile: "ProfilePicture", fill: "white", ajustToHeight: "100%", classes: "rounded-full border border-8 border-dashed"}),
+      githubIcon = ref({svgFile: "LanguageGitHub", fill: "black", ajustToHeight: "26px", link: "https://github.com/Artur-Hoppner/"}),
+      lionkedinIcon = ref({svgFile: "linkedin", fill: "black", ajustToHeight: "26px", link: "https://www.linkedin.com/in/artur-h%C3%B6ppner/"}),
+      waveBackground = ref({svgFile: "WaveBackground2", ajustToHeight: "", ajustToWidth: "100%"})
 </script>
 
 <template>
-  <div>
-    <div class="h-40"></div>
-    <div class="h-80 bg-primary">
-      <ProfilePicture :svgOptions="profilePicture" />
+  <div class="scroll-pin-container flex items-center flex-col">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 h-96 bg-primary dark:bg-secondary pt-10">
+      <div class="flex flex-col justify-center items-center md:items-end">
+        <div>
+          <h1 class="text-white dark:text-black text-4xl">Hi there!</h1>
+          <h2 class="text-white dark:text-black text-3xl">My name is Artur.</h2>
+          <p class="text-white dark:text-black">I am a Frontend Developer based in Stockholm</p>
+        </div>
+      </div>
+      <div class="">
+        <SvgIcon :svgOptions="profilePicture" />
+      </div>
+    </div>
 
+    <div class="w-full bg-primary">
+      <SvgIcon  :svgOptions="waveBackground" />
+      <!-- <a :href="githubIcon.link" target="_blank" rel="noopener noreferrer" class="block w-8">
+          <SvgIcon class="hover:fill-slate-300 cursor-pointer" :svgOptions="githubIcon" />
+        </a>
+        <a :href="lionkedinIcon.link" target="_blank" rel="noopener noreferrer" class="block w-8">
+          <SvgIcon class="hover:fill-slate-300 cursor-pointer" :svgOptions="lionkedinIcon" />
+        </a> -->
     </div>
-    <div class="h-40 bg-secondary">
-      <!-- <ProfilePicture :svgOptions="profilePicture" /> -->
-    </div>
-    <div class="p-12 h-38 border my-2">
-      Hi and welcome to my sandbox.
-    </div>
-    <div class="p-12">
-      <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, laudantium incidunt molestias in fugiat architecto perspiciatis facilis earum repudiandae vitae. Illum consequuntur totam maiores mollitia? Ad, voluptatibus similique. Tempore, corrupti! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae hic eos fugiat cum quis dolorum blanditiis in nesciunt. Libero debitis aut a tempora excepturi sequi adipisci, et repudiandae aliquam voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, pariatur vel soluta autem, labore at vero dolores, quas nam assumenda deleniti natus nesciunt temporibus inventore adipisci eum perferendis distinctio. Maxime.</h4>
-    </div>
-    <div class="h-28" ></div>
-    <div id="bubbleContainer" class="bg-primary sm:mx-10 sm:rounded-lg p-4">
-      <h3 class="text-slate-50 font-black">My Bubbles</h3>
+
+    <AnimatedScrolltrigger />
+
+    <div class="h-20" ></div>
+
+    <div id="bubbleContainer" class="w-full max-w-6xl bg-primary sm:mx-10 sm:rounded-lg p-4">
+      <h3 class="text-slate-50 font-black">Why do i do it?</h3>
       <div role="group" aria-labelledby="quetions-group-label">
         <ul class="flex flex-row flex-wrap">
           <!-- rename component to have better naming logic -->
@@ -52,39 +68,13 @@ const users = ref([
         </ul>
       </div>
     </div>
-    <div class="w-full h-48 border my-2">
-      <h3>My Skills</h3>
-      <!-- list of items -->
-      <ul class="grid grid-cols-4">
-        <li>Vue 3</li>
-        <li>Pinia</li>
-        <li>Git</li>
-        <li>Gitlab</li>
-        <li>Github</li>
-        <li>Bitbucket</li>
-        <li>Foundation</li>
-        <li>Tailwind</li>
-        <li>Node</li>
-        <li>Javascript</li>
-        <li>DigitalOcean</li>
-        <li>Heroku</li>
-        <li>Docker</li>
-        <li>Twig</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>SASS</li>
-        <li>GA</li>
-      </ul>
-    </div>
-    <div class="h-80"></div>
-    <div class="h-80"></div>
-    <AnimatedScrolltrigger />
-    <!-- <button class="custor-pointer my-12" @click="testing">activating gsap testing</button> -->
+
+    <Skillsets class="w-full max-w-6xl"/>
+
     <div class="h-80"></div>
     <div class="h-80"></div>
     <div class="h-80"></div>
-    <div class="h-80"></div>
-    <div class="h-80"></div>
+
   </div>
 </template>
 

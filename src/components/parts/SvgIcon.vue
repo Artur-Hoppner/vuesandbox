@@ -1,28 +1,30 @@
 <script setup>
 import { shallowRef, watchEffect } from 'vue'
 
+// {svgFile: "filename", fill: "", ajustToHeight: "", ajustTowidth: "", classes: "", watcher: true}
+
 const props = defineProps(['svgOptions']),
-      currentIcon = shallowRef(null)
+      currentIcon = shallowRef(undefined)
 
-
-if(true === true) {
+if(props.svgOptions.watcher) {
   watchEffect(() => {
     import(`../../assets/icons/${props.svgOptions.svgFile}.vue`).then(val => {
+        // val is a Module has default
       currentIcon.value = val.default
     })
   })
 } else {
-  import(`../../assets/icons/${props.svgOptions.svgFile}.vue`).then(val => {
-  // val is a Module has default
-  currentIcon.value = val.default
-})
+    import(`../../assets/icons/${props.svgOptions.svgFile}.vue`).then(val => {
+    // val is a Module has default
+    currentIcon.value = val.default
+  })
 }
+
 // watchEffect updates icon so dont need code bellow "Probably".
 // import(`../../assets/icons/${props.svgOptions.svgFile}.vue`).then(val => {
 //   // val is a Module has default
 //   currentIcon.value = val.default
 // })
-
 
 //____________________________________________
 
@@ -33,22 +35,21 @@ if(true === true) {
 </script>
 
 <template>
-  <div class="global-svg-icon flex items-center justify-center">
+  <div v-bind:title="props.svgOptions.svgFile" class="global-svg-icon flex items-center justify-center">
     <!-- <SvgFile /> -->
-    <component :is="currentIcon" />
+    <component :class="[props.svgOptions.classes ? props.svgOptions.classes : '']" :is="currentIcon" />
   </div>
 </template>
 
 <style>
   .global-svg-icon {
     height: v-bind(props.svgOptions.ajustToHeight);
-    width: v-bind(props.svgOptions.ajustTowidth);
-    
+    width: v-bind(props.svgOptions.ajustTowidth);    
   }
 
   .global-svg-icon svg {
-    height: 70%;
-    width: 100%;
+    height: 100%;
+    width: auto;
     fill: v-bind(props.svgOptions.fill);
   }
 </style>

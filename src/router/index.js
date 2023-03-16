@@ -34,6 +34,11 @@ import HomeView from '../views/HomeView.vue'
       path: '/sandbox',
       name: 'sandbox',
       component: () => import('../views/Sandbox.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('../views/NotFound.vue')
     }
   ]
 

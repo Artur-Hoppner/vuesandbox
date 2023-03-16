@@ -1,38 +1,29 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
+import SvgIcon from '@/components/parts/SvgIcon.vue'
+
+const PlaygorundIcon = ref({svgFile: "Playgorund", fill: "#ffffff", ajustToHeight: "80px", link: "https://www.linkedin.com/in/artur-h%C3%B6ppner/"})
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  gsap.to(".gsap-testing-activator", {
-    scrollTrigger: {
-      trigger: ".gsap-testing-activator",
-      pinnedContainer: "main",
-      start: "top center",
-      scrub: true,
-      pin: "main",
-      // markers: "true",
-      toggleAction: " restart none none none",
-      // toggleClass: "pin"
-    }
-  })
+  // gsap.to(".gsap-testing-activator", {
+  //   scrollTrigger: {
+  //     trigger: ".gsap-testing-activator",
+  //     pinnedContainer: "main",
+  //     start: "top",
+  //     scrub: true,
+  //     pin: "main",
+  //     // markers: "true",
+  //     toggleAction: " restart none none none",
+  //     // toggleClass: "pin"
+  //   }
+  // })
 
-  gsap.to(".fade-in", {
-    x: 100,
-    scrollTrigger: {
-      trigger: ".gsap-testing-activator",
-      pinnedContainer: "main",
-      start: "top 0",
-      end: "bottom 0",
-      scrub: true,
-      pin: "main",
-      // markers: "true",
-      toggleAction: " restart none none none",
-      toggleClass: "pin"
-    }
-  })
+  
   // gsap.to(section.querySelector(".gsap-testing-activator"), {
   //   opacity: 1,
   //   scrollTrigger: {
@@ -50,14 +41,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <h2 class="gsap-testing">Testing Gsap</h2>
-    <div class="gsap-testing-activator h-80 bg-teal-200 w-full border my-2">
-      <h2>What is this?</h2>
-      <!-- <ProfilePicture :svgOptions="profilePicture" /> -->
-      <p></p>
-      <h4>Scroll and add elements to this container</h4>
+  <div class="w-full bg-secondary h-80">
+    <div class="gsap-testing-activator h-80">
+      <p>One important rutin for me is to always set aside time for projects to try out new technologies. One example of this is this webpage that acts as my private sandbox </p>
+      <div class="h-20 w-20 bg-primary"></div>
       <div class="fade-in h-20 w-20 bg-primary"></div>
+      <SvgIcon class="" :svgOptions="PlaygorundIcon"/>
       <RouterLink to="/sandbox">See my Sandbox</RouterLink>
     </div>
   </div>

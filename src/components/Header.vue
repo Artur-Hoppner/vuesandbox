@@ -1,20 +1,43 @@
 <script setup>
-import { ref} from 'vue'
-import Nav from '@/components/HeaderNav.vue';
+import { ref, watch} from 'vue'
 import SvgIcon from '@/components/parts/SvgIcon.vue';
 import { colorPreferenceStore  } from '@/stores/darkMode';
+import { storeToRefs } from 'pinia';
+import { userAuthentication } from '@/stores/authentication';
+import HamburgeMenu from '@/components/parts/HamburgerMenu.vue';
 import HamburgeMenu2 from '@/components/parts/HamburgerMenu2.vue';
 
-const generalStoreData = colorPreferenceStore();
-const svgLightMode = ref({svgFile: "lightmode", fill: "black", ajustToHeight: "26px"}),
-      svgDarkMode = ref({svgFile: "darkmode", fill: "black", ajustToHeight: "26px"})
+const authentication = userAuthentication()
+const routerUserLogin = ref("Login")
+
+const { darkmodeToggle } = storeToRefs(colorPreferenceStore()),
+      generalStoreData = colorPreferenceStore(),
+      svgLightMode = ref({svgFile: darkmodeToggle.value, fill: "#ffffff", ajustToHeight: "40px", watcher: true}),
+      SunAnimated = ref({svgFile: darkmodeToggle.value, fill: "#ffffff", ajustToHeight: "40px", watcher: true});
+
+watch(() => darkmodeToggle.value, (param) => svgLightMode.value.svgFile = param);
+
 </script>
 
 <template>
-  <header class="flex ">
-    <!-- // Uppdate to just use one -->
-    <SvgIcon class="cursor-pointer absolute top-2 right-16 m-2 hover:fill-slate-600" v-if="generalStoreData.darkmodeToggle" :svgOptions="svgDarkMode" @click="generalStoreData.toggleDarkmode()" />
-    <SvgIcon class="cursor-pointer absolute top-2 right-16 m-2 hover:fill-slate-300" v-if="!generalStoreData.darkmodeToggle" :svgOptions="svgLightMode" @click="generalStoreData.toggleDarkmode()" />
-    <Nav />
+  <header class="fixed top-0 z-50 h-0 w-screen flex justify-between p-3">
+    <SvgIcon class="cursor-pointer" :svgOptions="svgLightMode" @click="generalStoreData.toggleDarkmode()" />
+
+    <nav class=" invisible xl:visible text-white grid grid-cols-1  md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 text-center m-10">
+      <RouterLink class="m-3 p-2 bg-gray-400 rounded translate-x-2 rotate-[-3deg] duration-500 hover:rotate-2 hover:translate-x-[-0.25rem] hover:bg-secondary"  to="/">
+        Home
+      </RouterLink>
+      <RouterLink class="m-3 p-2 bg-gray-400 rounded translate-x-[-0.25rem] rotate-6 duration-500 hover:rotate-[-1deg] hover:translate-x-1 hover:bg-secondary" to="/sandbox">
+        Sandbox
+      </RouterLink>
+      <RouterLink class="m-3 p-2 bg-gray-400 rounded rotate-[-2deg] duration-500 hover:rotate-2 hover:translate-x-1 hover:bg-secondary" v-if="authentication.authenticatedUser" to="/styleguide">
+        Styleguide
+      </RouterLink>
+      <Router-link class="m-3 p-2 bg-gray-400 rounded translate-x-2 rotate-6 duration-500 hover:rotate-0 hover:translate-x-0 hover:bg-secondary" to="/logout">
+        {{ authentication.routerLinkString }}
+      </Router-link>
+      <!-- <HamburgeMenu  /> -->
+    </nav>
+    <!-- <HamburgeMenu2 class="invisible" /> -->
   </header>
 </template>

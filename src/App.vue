@@ -40,12 +40,29 @@ const birthdayWishlist = true
   </div>
 </template>
 
-<style>
+<style lang="scss">
 
-#app {text-align:center}
+
+
+body {
+  min-height: 100vh;
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align:center;
+
+  }
+}
+
+// #app {
+//   min-height: 100vh;
+
+// }
 
 .fade-enter-active {
-  transition: opacity 2.6s;
+  transition: opacity 0.7s;
 }
 
 .fade-leave-to,
