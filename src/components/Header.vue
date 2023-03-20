@@ -4,8 +4,7 @@ import SvgIcon from '@/components/parts/SvgIcon.vue';
 import { colorPreferenceStore  } from '@/stores/darkMode';
 import { storeToRefs } from 'pinia';
 import { userAuthentication } from '@/stores/authentication';
-import HamburgeMenu from '@/components/parts/HamburgerMenu.vue';
-import HamburgeMenu2 from '@/components/parts/HamburgerMenu2.vue';
+import HamburgeMenu2 from '@/components/parts/HamburgerMenu.vue';
 
 const authentication = userAuthentication()
 const routerUserLogin = ref("Login")
@@ -34,13 +33,12 @@ watch(() => darkmodeToggle.value, (param) => svgLightMode.value.svgFile = param)
         <RouterLink class="m-3 p-2 bg-gray-400 rounded rotate-[-2deg] duration-500 hover:rotate-2 hover:translate-x-1 hover:bg-secondary" v-if="authentication.authenticatedUser" to="/styleguide">
           Styleguide
         </RouterLink>
-        <Router-link class="m-3 p-2 bg-gray-400 rounded translate-x-2 rotate-6 duration-500 hover:rotate-0 hover:translate-x-0 hover:bg-secondary" to="/logout">
+        <!-- <Router-link class="m-3 p-2 bg-gray-400 rounded translate-x-2 rotate-6 duration-500 hover:rotate-0 hover:translate-x-0 hover:bg-secondary" to="/logout">
           {{ authentication.routerLinkString }}
-        </Router-link>
-        <!-- <HamburgeMenu  /> -->
+        </Router-link> -->
       </nav>
     </transition>
-    <!-- <HamburgeMenu2 class="invisible" /> -->
+    <HamburgeMenu2 />
   </header>
 </template>
 

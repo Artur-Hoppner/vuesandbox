@@ -6,11 +6,19 @@ import { shallowRef, watchEffect } from 'vue'
 const props = defineProps(['svgOptions']),
       currentIcon = shallowRef(undefined)
 
+if(props.svgOptions.watcher) {
+  watchEffect(() => {
+    import(`../../assets/icons/${props.svgOptions.svgFile}.vue`).then(val => {
+        // val is a Module has default
+      currentIcon.value = val.default
+    })
+  })
+} else {
     import(`../../assets/icons/${props.svgOptions.svgFile}.vue`).then(val => {
     // val is a Module has default
     currentIcon.value = val.default
   })
-
+}
 
 // watchEffect updates icon so dont need code bellow "Probably".
 // import(`../../assets/icons/${props.svgOptions.svgFile}.vue`).then(val => {

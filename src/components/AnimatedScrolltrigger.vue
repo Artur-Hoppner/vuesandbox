@@ -26,12 +26,12 @@ onMounted(() => {
     })
     .from("#idone", {
       opacity: 0,
-      x: 50,
+      x: 25,
       duration: 1
     })
     .from("#idtwo", {
       opacity: 0,
-      x: 50,
+      x: 25,
       duration: 1
     })
   }, 100 );
