@@ -19,7 +19,7 @@ const users = ref([
         // {header: "11", bgColor: "bg-teal-300", position: "items-center justify-end sm:items-end"},
         // {header: "12", bgColor: "bg-amber-100", position: "items-center justify-center sm:justify-end sm:items-end"}
       ]),
-      profilePicture = ref({svgFile: "ProfilePicture", fill: "white", ajustToHeight: "100%", classes: "rounded-full border border-8 border-dashed"}),
+      profilePicture = ref({svgFile: "ProfilePicture", ajustToHeight: "100%", classes: "rounded-full border border-8 border-dashed dark:border-gray-400"}),
       githubIcon = ref({svgFile: "LanguageGitHub", fill: "black", ajustToHeight: "26px", link: "https://github.com/Artur-Hoppner/"}),
       lionkedinIcon = ref({svgFile: "linkedin", fill: "black", ajustToHeight: "26px", link: "https://www.linkedin.com/in/artur-h%C3%B6ppner/"}),
       waveBackground = ref({svgFile: "WaveBackground2", ajustToHeight: "", ajustToWidth: "100%"})
@@ -27,10 +27,10 @@ const users = ref([
 
 <template>
   <div class="scroll-pin-container flex items-center flex-col">
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 h-96 bg-primary dark:bg-secondary pt-10">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 h-96 bg-primary dark:bg-primarydark pt-10 dark-transition">
       <div class="flex flex-col justify-center items-center md:items-end">
-        <div>
-          <h1 class="text-white dark:text-black text-4xl">Hi there!</h1>
+        <div class="dark-transition">
+          <h1 class="text-white dark:text-black text-4xl dark-transition">Hi there!</h1>
           <h2 class="text-white dark:text-black text-3xl">My name is Artur.</h2>
           <p class="text-white dark:text-black">I am a Frontend Developer based in Stockholm</p>
         </div>
@@ -40,7 +40,7 @@ const users = ref([
       </div>
     </div>
 
-    <div class="w-full bg-primary">
+    <div class="tghfjgfhgsj w-full bg-primary dark:bg-primarydark">
       <SvgIcon  :svgOptions="waveBackground" />
       <!-- <a :href="githubIcon.link" target="_blank" rel="noopener noreferrer" class="block w-8">
           <SvgIcon class="hover:fill-slate-300 cursor-pointer" :svgOptions="githubIcon" />
@@ -69,11 +69,10 @@ const users = ref([
       </div>
     </div>
 
-    <Skillsets class="w-full max-w-6xl"/>
+    <div class="h-20" ></div>
 
-    <div class="h-80"></div>
-    <div class="h-80"></div>
-    <div class="h-80"></div>
+    <Skillsets class="w-full max-w-6xl"/>
+    <div class="h-20" ></div>
 
   </div>
 </template>

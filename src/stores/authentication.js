@@ -14,7 +14,6 @@ export const userAuthentication = defineStore('authentication', () => {
   }
 
   function loggedIn(userData) {
-    console.log("fnjskhfks")
     if (userData.userName == "" && userData.password == "") {
       // this is temporary authentivcation until backend is finished and can send finished token with respons-data.
       localStorage.setItem('user', 'enkryptedToken');

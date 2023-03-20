@@ -18,17 +18,7 @@ function saveInput(parameter){
 
 // Testing Suspense function
 const arrayOf = [],
-      answerOfArrays = [],
-      timeOutSuspense = () => {
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            resolve({
-              object: "Testing of VUE 3 Experimental Feature Suspense"
-            })
-          }, 500)
-        })
-      },
-      testingSuspens = ref(await timeOutSuspense());
+      answerOfArrays = []
 //__________________________
 
 
@@ -54,10 +44,6 @@ onMounted(() => {
 
 <template>
   <div>
-    <h3 class="gtesting">GSAP testing</h3>
-    <transition name="slide-fade">
-      <h2>Hejsan</h2>
-    </transition>
     <StoreToRef />
     <button @click="debouncedFunction" class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded">Debouncer Function</button>
     <!-- ADD A TOGGLE COMPONENT WITH FUNCTION TO NOT SHOW ALL PROJETS AT THE SAME TIME -->
@@ -65,19 +51,3 @@ onMounted(() => {
     <Listing />
   </div>
 </template>
-
-<style  scoped>
-  .slide-fade-enter-active {
-    transition: all 0.3s ease-out;
-  }
-
-  .slide-fade-leave-active {
-    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  .slide-fade-enter-from,
-  .slide-fade-leave-to {
-    transform: translateX(20px);
-    opacity: 0;
-  }
-</style>

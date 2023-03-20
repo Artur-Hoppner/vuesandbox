@@ -7,14 +7,14 @@ import TerminalAnimation from './components/LandingpageAnimation.vue'
 import Loader from '@/components/parts/Loader.vue'
 
 
-const birthdayWishlist = true
-
+const birthdayWishlist = false
 </script>
 
 <template>
   <VincentsWishlist v-if="birthdayWishlist" />
-  <!-- fix body min height-100vh + position: relative -->
-  <div v-if="!birthdayWishlist" class="min-h-screen relative">
+
+  <!-- When remove this add min-h-screen to #app in index.html-->
+  <div v-if="!birthdayWishlist" class="min-h-screen transition-colors duration-1000 relative">
     <Header />
     <main>
       <router-view v-slot="{ Component }">
@@ -45,6 +45,7 @@ const birthdayWishlist = true
 
 
 body {
+
   min-height: 100vh;
 
   * {
@@ -52,7 +53,7 @@ body {
     margin: 0;
     padding: 0;
     text-align:center;
-
+    // @apply transition-colors duration-300;
   }
 }
 
@@ -62,7 +63,7 @@ body {
 // }
 
 .fade-enter-active {
-  transition: opacity 0.7s;
+  transition: opacity 1s;
 }
 
 .fade-leave-to,

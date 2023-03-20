@@ -53,7 +53,7 @@ function uppdateFavorite() {
   .list-bottom-part {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     min-height: 80px;
     width: 100%;
   }
@@ -61,7 +61,7 @@ function uppdateFavorite() {
   .list-bottom-part {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     min-height: 80px;
     width: 100%;
     padding: 0 10px

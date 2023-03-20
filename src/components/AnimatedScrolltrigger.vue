@@ -1,53 +1,56 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, onUnmounted } from 'vue'
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SvgIcon from '@/components/parts/SvgIcon.vue'
 
 const PlaygorundIcon = ref({svgFile: "Playgorund", fill: "#ffffff", ajustToHeight: "80px", link: "https://www.linkedin.com/in/artur-h%C3%B6ppner/"})
 
-
 gsap.registerPlugin(ScrollTrigger);
-
 onMounted(() => {
-  // gsap.to(".gsap-testing-activator", {
-  //   scrollTrigger: {
-  //     trigger: ".gsap-testing-activator",
-  //     pinnedContainer: "main",
-  //     start: "top",
-  //     scrub: true,
-  //     pin: "main",
-  //     // markers: "true",
-  //     toggleAction: " restart none none none",
-  //     // toggleClass: "pin"
-  //   }
-  // })
+  setTimeout(() => {
+    gsap.timeline( {
+      scrollTrigger: {
+        id: "testingId",
+        trigger: ".gsap-testing-activator",
+        start: "top ",
+        end: "bottom -2400",
+        scrub: true,
+        pin: ".scroll-pin-container",
+      }
+    })
+    .from("#idfstwo", {
+      autoAlpha: 0,
+      scale: 0.5,
+      duration: 4
+    })
+    .from("#idone", {
+      opacity: 0,
+      x: 50,
+      duration: 1
+    })
+    .from("#idtwo", {
+      opacity: 0,
+      x: 50,
+      duration: 1
+    })
+  }, 100 );
+})
 
-  
-  // gsap.to(section.querySelector(".gsap-testing-activator"), {
-  //   opacity: 1,
-  //   scrollTrigger: {
-  //     trigger: section,
-  //     pinnedContainer: "main",
-  //     start: "top 0",
-  //     end: "bottom 0",
-  //     pin: "main",
-  //     start: "center center",
-  //     end: "+=300",
-  //     toggleActions: "play none none reverse"
-  //   }
-  // });
+onUnmounted(() => {
+  let pathsTrigger = ScrollTrigger.getById("testingId")
+      pathsTrigger.kill()
 })
 </script>
 
 <template>
-  <div class="w-full bg-secondary h-80">
-    <div class="gsap-testing-activator h-80">
-      <p>One important rutin for me is to always set aside time for projects to try out new technologies. One example of this is this webpage that acts as my private sandbox </p>
-      <div class="h-20 w-20 bg-primary"></div>
-      <div class="fade-in h-20 w-20 bg-primary"></div>
-      <SvgIcon class="" :svgOptions="PlaygorundIcon"/>
-      <RouterLink to="/sandbox">See my Sandbox</RouterLink>
+  <div class="gsap-testing-activator w-full bg-secondary dark:bg-secondarydark h-screen flex items-start justify-center pt-10">
+    <div class=" h-80 w-4/5 bg-gray-200 rounded gap-4 flex items-center justify-center flex-wrap">
+      <div>
+        <p id="idone">One important rutin for me is to always set aside time for projects to try out new technologies. One example of this is this webpage that acts as my private sandbox </p>
+        <RouterLink id="idtwo" to="/sandbox">See my Sandbox</RouterLink>
+      </div>
+      <SvgIcon id="idfstwo" class="" :svgOptions="{svgFile: 'computer', ajustToHeight: '50%'}"/>
     </div>
   </div>
 </template>
