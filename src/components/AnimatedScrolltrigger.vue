@@ -1,56 +1,77 @@
 <script setup>
-import { onMounted, ref, onUnmounted } from 'vue'
-import gsap from 'gsap'
+import { onMounted, ref, onUnmounted } from 'vue';
+import gsap from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
-import SvgIcon from '@/components/parts/SvgIcon.vue'
-
-const PlaygorundIcon = ref({svgFile: "Playgorund", fill: "#ffffff", ajustToHeight: "80px", link: "https://www.linkedin.com/in/artur-h%C3%B6ppner/"})
+import SvgIcon from '@/components/parts/SvgIcon.vue';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const githubIcon = ref({svgFile: "LanguageGitHub", fill: "black", ajustToHeight: "26px", link: "https://github.com/Artur-Hoppner/vuesandbox"});
+
+
+// Next: Add mediaquary to this:
+// const mm = gsap.matchMedia();
+
+// mm.add("(max-width: 600px)", () => {
+
+// })
+
 onMounted(() => {
   setTimeout(() => {
     gsap.timeline( {
       scrollTrigger: {
-        id: "testingId",
-        trigger: ".gsap-testing-activator",
+        id: "presentationTrigger",
+        trigger: ".presentation-pin-container",
         start: "top ",
         end: "bottom -2400",
         scrub: true,
         pin: ".scroll-pin-container",
       }
     })
-    .from("#idfstwo", {
+    .from("#animatedSvg", {
       autoAlpha: 0,
       scale: 0.5,
       duration: 4
     })
     .from("#idone", {
       opacity: 0,
-      x: 25,
+      y: -25,
       duration: 1
     })
     .from("#idtwo", {
       opacity: 0,
-      x: 25,
+      y: 45,
       duration: 1
     })
-  }, 100 );
+  }, 250 );
 })
 
 onUnmounted(() => {
-  let pathsTrigger = ScrollTrigger.getById("testingId")
-      pathsTrigger.kill()
+  let pathsTrigger = ScrollTrigger.getById("presentationTrigger");
+      pathsTrigger.kill();
 })
 </script>
 
 <template>
-  <div class="gsap-testing-activator w-full bg-secondary dark:bg-secondarydark h-screen flex items-start justify-center pt-10">
-    <div class=" h-80 w-4/5 bg-gray-200 rounded gap-4 flex items-center justify-center flex-wrap">
-      <div>
-        <p id="idone">One important rutin for me is to always set aside time for projects to try out new technologies. One example of this is this webpage that acts as my private sandbox </p>
-        <RouterLink id="idtwo" to="/sandbox">See my Sandbox</RouterLink>
+  <div class="presentation-pin-container w-full bg-secondary dark:bg-secondarydark h-screen flex items-center flex-col justify-center pt-10">
+    <h3 class="text-center text-white text-3xl mb-4">What is this page for?</h3>
+
+    <div class="h-96 w-4/5 max-w-5xl bg-gray-100 rounded flex flex-col md:flex-row items-center justify-center px-4 md:px-3 py-3 md:py-8">
+
+      <div class="h-full md:w-6/12 flex justify-center flex-col">
+        <p id="idone">It´s important for me to always set aside time for private project and try out new techniques. </p>
+        <p id="idone" class="py-4"> One of those examples is this webpage example. </p>
+        <a id="idtwo" :href="githubIcon.link" target="_blank" rel="noopener noreferrer" class="">
+          Checkout the github repo
+          <SvgIcon class="hover:fill-slate-300 cursor-pointer" :svgOptions="githubIcon" />
+        </a>
       </div>
-      <SvgIcon id="idfstwo" class="" :svgOptions="{svgFile: 'computer', ajustToHeight: '50%'}"/>
+
+      <div class="h-full md:w-6/12 flex justify-center flex-col">
+        <!-- <h3 class=" text-center">What is this page for?</h3> -->
+        <SvgIcon id="animatedSvg" class="" :svgOptions="{svgFile: 'computer', ajustToWidth: '100%'}"/>
+      </div>
+
     </div>
   </div>
 </template>

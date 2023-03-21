@@ -40,8 +40,8 @@ const users = ref([
       </div>
     </div>
 
-    <div class="tghfjgfhgsj w-full bg-primary dark:bg-primarydark">
-      <SvgIcon  :svgOptions="waveBackground" />
+    <div class="wave-background-container background w-full bg-primary dark:bg-primarydark">
+      <SvgIcon :svgOptions="waveBackground" />
       <!-- <a :href="githubIcon.link" target="_blank" rel="noopener noreferrer" class="block w-8">
           <SvgIcon class="hover:fill-slate-300 cursor-pointer" :svgOptions="githubIcon" />
         </a>
@@ -52,10 +52,10 @@ const users = ref([
 
     <AnimatedScrolltrigger />
 
-    <div class="h-20" ></div>
+    <div class="h-60" ></div>
 
     <div id="bubbleContainer" class="w-full max-w-6xl bg-primary sm:mx-10 sm:rounded-lg p-4">
-      <h3 class="text-slate-50 font-black">Why do i do it?</h3>
+      <h3 class="text-slate-50 font-black">Why do i do code?</h3>
       <div role="group" aria-labelledby="quetions-group-label">
         <ul class="flex flex-row flex-wrap">
           <!-- rename component to have better naming logic -->
@@ -69,7 +69,7 @@ const users = ref([
       </div>
     </div>
 
-    <div class="h-20" ></div>
+    <div class="h-40" ></div>
 
     <Skillsets class="w-full max-w-6xl"/>
     <div class="h-20" ></div>
