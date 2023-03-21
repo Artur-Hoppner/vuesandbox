@@ -67,8 +67,7 @@ onUnmounted(() => {
         </a>
       </div>
 
-      <div class="h-full md:w-6/12 flex justify-center flex-col">
-        <!-- <h3 class=" text-center">What is this page for?</h3> -->
+      <div class="h-full w-full md:w-6/12 flex justify-center flex-col">
         <SvgIcon id="animatedSvg" class="" :svgOptions="{svgFile: 'computer', ajustToWidth: '100%'}"/>
       </div>
 
