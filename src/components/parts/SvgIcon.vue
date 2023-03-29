@@ -1,7 +1,7 @@
 <script setup>
 import { shallowRef, watchEffect } from 'vue'
 
-// {svgFile: "filename", fill: "", ajustToHeight: "", ajustTowidth: "", classes: "", watcher: true}
+// {svgFile: "filename", fill: "", ajustToHeight: "", ajustTowidth: "", svgWidth: "" classes: "", watcher: true}
 
 const props = defineProps(['svgOptions']),
       currentIcon = shallowRef(undefined)
@@ -35,21 +35,11 @@ if(props.svgOptions.watcher) {
 </script>
 
 <template>
-  <div v-bind:title="props.svgOptions.svgFile" class="global-svg-icon flex items-center justify-center">
-    <!-- <SvgFile /> -->
-    <component :class="[props.svgOptions.classes ? props.svgOptions.classes : '']" :is="currentIcon" />
+  <div v-bind:title="props.svgOptions.svgFile" :class="[`h-full global-svg-icon flex items-center justify-center`, props.svgOptions.containerClasses ? props.svgOptions.containerClasses : '']">
+      <!-- <SvgFile :class="[props.svgOptions.svgClasses ? props.svgOptions.svgClasses : '']" :is="currentIcon"  /> -->
+      <component :class="[props.svgOptions.svgClasses ? props.svgOptions.svgClasses : '']" :is="currentIcon" />
   </div>
 </template>
 
 <style>
-  .global-svg-icon {
-    height: v-bind(props.svgOptions.ajustToHeight);
-    width: v-bind(props.svgOptions.ajustTowidth);    
-  }
-
-  .global-svg-icon svg {
-    height: 100%;
-    width: auto;
-    fill: v-bind(props.svgOptions.fill);
-  }
 </style>

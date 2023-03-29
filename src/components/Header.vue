@@ -11,8 +11,7 @@ const routerUserLogin = ref("Login")
 
 const { darkmodeToggle } = storeToRefs(colorPreferenceStore()),
       generalStoreData = colorPreferenceStore(),
-      svgLightMode = ref({svgFile: darkmodeToggle.value, fill: "#ffffff", ajustToHeight: "40px", watcher: true}),
-      SunAnimated = ref({svgFile: darkmodeToggle.value, fill: "#ffffff", ajustToHeight: "40px", watcher: true});
+      svgLightMode = ref({svgFile: darkmodeToggle.value, svgClasses: 'w-12 h-12',containerClasses: 'w-12 h-12', watcher: true})
 
 watch(() => darkmodeToggle.value, (param) => svgLightMode.value.svgFile = param);
 
@@ -22,7 +21,6 @@ watch(() => darkmodeToggle.value, (param) => svgLightMode.value.svgFile = param)
   <header class="fixed top-0 z-50 h-0 w-screen flex justify-between p-3">
     <SvgIcon class="cursor-pointer" :svgOptions="svgLightMode" @click="generalStoreData.toggleDarkmode()" />
 
-    <transition name="fadetest" appear>
     <nav class="transition-all invisible xl:visible text-white grid grid-cols-1  md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 text-center m-5">
         <RouterLink class=" m-3 p-2 bg-gray-400 rounded translate-x-2 rotate-[-3deg] duration-500 hover:rotate-2 hover:translate-x-[-0.25rem] hover:bg-secondary"  to="/">
           Home
@@ -37,7 +35,6 @@ watch(() => darkmodeToggle.value, (param) => svgLightMode.value.svgFile = param)
           {{ authentication.routerLinkString }}
         </Router-link> -->
       </nav>
-    </transition>
     <HamburgeMenu2 />
   </header>
 </template>

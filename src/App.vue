@@ -8,6 +8,7 @@ import Loader from '@/components/parts/Loader.vue'
 
 
 const birthdayWishlist = false
+
 </script>
 
 <template>

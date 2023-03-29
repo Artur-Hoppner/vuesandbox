@@ -17,10 +17,5 @@
     @apply opacity-50 cursor-not-allowed
   }
 
-  .transition-background-primary {
-    @apply transition-colors duration-500 bg-primary;
-  }
-  .transition-background-secondary {
-    @apply transition-colors duration-500 bg-secondary;
-  }
+ 
 }
