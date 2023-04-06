@@ -4,18 +4,18 @@ import { defineStore } from 'pinia'
 export const colorPreferenceStore = defineStore('darkMode', () => {
   // DARKMODE DATA:
   const osLightModePreference = ref(window.matchMedia('(prefers-color-scheme: dark)')),
-        darkmodeToggle = ref("LightMode")
+        darkmodeToggle = ref("DarkMode")
 
   // DARKMODE FUNCTIONS:
   function checkLightMode(darkModeParameter) {
     if (darkModeParameter) {
       document.documentElement.classList.add('dark')
       localStorage.theme = 'dark'
-      darkmodeToggle.value = "DarkMode"
+      darkmodeToggle.value = "LightMode"
     } else {
       document.documentElement.classList.remove('dark')
       localStorage.theme = 'light'
-      darkmodeToggle.value = "LightMode"
+      darkmodeToggle.value = "DarkMode"
     }
   }
 

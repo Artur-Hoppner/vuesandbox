@@ -40,6 +40,3 @@ if(props.svgOptions.watcher) {
       <component :class="[props.svgOptions.svgClasses ? props.svgOptions.svgClasses : '']" :is="currentIcon" />
   </div>
 </template>
-
-<style>
-</style>

@@ -54,7 +54,6 @@ body {
     margin: 0;
     padding: 0;
     text-align:center;
-    // @apply transition-colors duration-300;
   }
 }
 

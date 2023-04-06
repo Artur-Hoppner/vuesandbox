@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { userAuthentication } from '@/stores/authentication';
-import HomeView from '../views/HomeView.vue'
+import MainPage from '../views/MainPage.vue'
 
   const routes = [
     {
@@ -23,7 +23,7 @@ import HomeView from '../views/HomeView.vue'
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: MainPage
     },
     {
       path: '/styleguide',
@@ -77,7 +77,7 @@ export default router
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: MainPage
     },
     {
       path: '/about',
