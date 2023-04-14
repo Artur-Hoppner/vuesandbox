@@ -8,6 +8,7 @@ const skillCategories = ref([["LanguageJavascript", "LanguageVue", "LanguagePini
 <template>
   <div>
     <div v-for="categorieSkills in skillCategories" class="rounded bg-gray-50  md:mx-12 mt-3 p-8">
+      <!-- change to dymanicly add tools or Language header -->
       <h4>Languages</h4> 
       <div class="grid grid-cols-3 md:grid-cols-4 gap-5 place-items-center">
         <SvgIcon class="duration-500 hover:scale-125 p-1" v-for="skillFilePath in categorieSkills" :svgOptions="{ svgFile: skillFilePath, svgClasses: `h-12 w-auto`}" />

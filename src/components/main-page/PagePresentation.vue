@@ -23,36 +23,40 @@ onMounted(() => {
         
         id: "presentationTrigger",
         trigger: ".presentation-pin-container",
-        start: "top ",
+        start: "top 20",
         end: "bottom -2000",
         scrub: true,
         pin: ".scroll-pin-container",
       }
     })
+    .from(".test1768", {
+      opacity: 0,
+      duration: 1
+    })
     .from("#presentation-header", {
       opacity: 0,
       y: -25,
-      duration: 1
+      duration: 2
     })
     .from("#presentation-svg-animation", {
       autoAlpha: 0.2,
       scale: 0.4  ,
-      duration: 4
+      duration: 8
     })
     .from("#presentation-paragraph1", {
       opacity: 0,
       y: -25,
-      duration: 1
+      duration: 2
     })
     .from("#presentation-paragraph2", {
       opacity: 0,
       x: 65,
-      duration: 1
+      duration: 2
     })
     .from("#presentation-link", {
       opacity: 0,
       x: -65,
-      duration: 1
+      duration: 2
     })
   }, 250 );
 })
@@ -64,10 +68,10 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="presentation-pin-container w-full bg-secondary dark:bg-secondarydark h-screen flex items-center flex-col justify-center pt-10">
+  <div class="presentation-pin-container w-full bg-secondary-color h-screen flex items-center flex-col justify-center pt-10">
     <h3 id="presentation-header" class="text-center text-white text-3xl mb-4">What is this page for?</h3>
 
-    <div class="h-4/5 md:h-96 w-11/12 md:w-4/5 max-w-5xl bg-gray-100 rounded flex flex-col md:flex-row items-center justify-center px-4 md:px-3 py-3 md:py-8">
+    <div class="test1768 h-4/5 md:h-96 w-11/12 md:w-4/5 max-w-5xl bg-gray-100 rounded flex flex-col md:flex-row items-center justify-center px-4 md:px-3 py-3 md:py-8">
 
       <div class="h-full md:w-6/12 flex justify-center items-center flex-col border bg-gray-200 p-2 overflow-hidden">
         <p id="presentation-paragraph1">It´s important for me to always set aside time for private project and try out new techniques. </p>

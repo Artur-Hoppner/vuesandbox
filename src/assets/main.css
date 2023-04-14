@@ -3,9 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body * {
+/* body * {
   @apply transition-colors;
-}
+} */
 
 
 
@@ -19,5 +19,11 @@ body * {
     @apply opacity-50 cursor-not-allowed
   }
 
- 
+  .bg-primary-color {
+    @apply bg-primary dark:bg-primarydark transition-colors
+  }
+
+  .bg-secondary-color {
+    @apply bg-secondary dark:bg-secondarydark transition-colors
+  }
 }
