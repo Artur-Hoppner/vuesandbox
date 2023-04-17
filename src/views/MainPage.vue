@@ -21,7 +21,7 @@ const profilePicture = ref(),
           <p class="text-white dark:text-black">I am a Frontend Developer based in Stockholm</p>
         </div>
       </div>
-        <SvgIcon :svgOptions="{svgFile: 'ProfilePicture', containerClasses: 'w-auto', svgClasses: 'w-auto h-full rounded-full border border-8 border-dashed dark:border-gray-400'}" />
+      <SvgIcon :svgOptions="{svgFile: 'ProfilePicture', containerClasses: 'w-auto', svgClasses: 'w-auto h-full rounded-full border border-8 border-dashed dark:border-gray-400'}" />
     </div>
 
     <div class="wave-background-container background w-full bg-primary-color">
