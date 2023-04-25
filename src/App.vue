@@ -46,9 +46,13 @@ const birthdayWishlist = false
 
 
 body {
-
   min-height: 100vh;
+  min-height: 100svh;
 
+  @media screen and (min-width: 768px) {
+    min-height: 100vh;
+  }
+  
   * {
     box-sizing: border-box;
     margin: 0;

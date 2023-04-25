@@ -3,12 +3,12 @@ import { ref } from 'vue'
 import InputAnimationGrid from '@/components/main-page/BubbleIntersectionObserverItems.vue'
 
 const users = ref([
-        {header: "Its creative", bgColor: "bg-pink-400", position: "justify-center sm:justify-start sm:items-end"},
-        {header: "Challenging", bgColor: "bg-lime-50", position: "items-center sm:items-center"},
-        {header: "Always new things to learn", bgColor: "bg-amber-200", position: "justify-end sm:justify-start"},
-        {header: "Fun", bgColor: "bg-indigo-300", position: "items-end justify-center sm:items-center"},
-        {header: "5", bgColor: "bg-zinc-300", position: "justify-center sm:items-end"},
-        {header: "6", bgColor: "bg-sky-300", position: "items-center sm:items-center"},
+        {header: "Creative", bgColor: "bg-pink-400", position: "justify-center sm:justify-start sm:items-end"},
+        {header: "Challenging", bgColor: "bg-lime-500", position: "items-center sm:items-center"},
+        {header: "Allways things to learn", bgColor: "bg-amber-400", position: "justify-end sm:justify-start"},
+        {header: "Fun", bgColor: "bg-indigo-400", position: "items-end justify-center sm:items-center"},
+        {header: "Easy stimulus", bgColor: "bg-zinc-400", position: "justify-center sm:items-end"},
+        {header: "Versatile", bgColor: "bg-sky-400", position: "items-center sm:items-center"},
         // {header: "7", bgColor: "bg-purple-300", position: "justify-end sm:justify-end sm:items-center"},
         // {header: "8", bgColor: "bg-red-200", position: "items-center justify-center sm:justify-end sm:items-start"},
         // {header: "9", bgColor: "bg-lime-400", position: "justify-center sm:justify-end"},

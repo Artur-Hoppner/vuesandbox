@@ -7,11 +7,10 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 const timelineItems = [
-        {position: "left", header: "Frontend", text: "Text of the item"},
-        {position: "right", header: "Pipeline", text: "Text of the item"},
-        {position: "left", header: "Server", text: "Text of the item"},
-        {position: "left", header: "header", text: "Text of the item"},
-        {position: "right", header: "Backend", text: "Text of the item"}
+        {position: "left", header: "Frontend", text: "Built with Vue3 and Pinia. In this I'm trying out some experimental features, for example suspense. I'm using Tailwind for styling and GSAP for animation features."},
+        {position: "right", header: "Pipeline", text: "Deployment is easy when I'm using GitHub's own workflow that automatically updates DockerHub repository when pushed to master."},
+        {position: "left", header: "Server", text: "Using an Nginx reverse proxy server in a droplet on DigitalOcean to manage multiple apps. There is a watcher in the droplet that automatically updates the deployed site if DockerHub repository is updated."},
+        {position: "right", header: "Future project", text: "Connect login functionality to a backend and database. The frontend has a basic login function with no backend connecten."}
       ]
 
 onMounted(() => {
@@ -24,7 +23,7 @@ function animateOnScroll(timelineObject) {
     gsap.from(`.timeline-${index}`, {
       duration: 1.2,
       ease: "elastic.out(0.8, 0.4)",
-      x: timelineObject[index].position === 'left' ? -40 : 40,
+      x: window.innerWidth <= 700 && timelineObject[index].position === 'left' ? 40 : timelineObject[index].position === 'left' ? -40 : 40,
       opacity: 0,
       scrollTrigger: {
         trigger: `.timeline-${index}`,
@@ -47,7 +46,7 @@ function animateOnScroll(timelineObject) {
           <div class="h-full w-1 bg-secondary-color pointer-events-none"></div>
         </div>
       </div>
-      <div class="bg-secondary-color rounded-xl col-start-5 col-end-6 md:mx-auto relative mr-10">
+      <div class="bg-secondary-color rounded-xl md:col-start-5 md:col-end-6">
           <p class="p-2 ">Techstack</p>
       </div>
       <div class="h-20 col-start-5 col-end-6 md:mx-auto relative mr-10">
@@ -76,7 +75,7 @@ function animateOnScroll(timelineObject) {
               {{ items.text }}  
             </p>
           </div>
-          <div class="h-52 col-start-5 col-end-6 md:mx-auto relative mr-10">
+          <div class="h-60 col-start-5 col-end-6 md:mx-auto relative mr-10">
             <div class="h-full w-6 flex items-center justify-center">
               <div class="h-full w-1 bg-secondary-color pointer-events-none"></div>
             </div>
@@ -91,7 +90,7 @@ function animateOnScroll(timelineObject) {
           v-if="items.position === 'right'"
           class="flex md:contents"
         >
-          <div class="h-52 col-start-5 col-end-6 mr-10 md:mx-auto relative">
+          <div class="h-60 col-start-5 col-end-6 mr-10 md:mx-auto relative">
             <div class="h-full w-6 flex items-center justify-center">
               <div class="h-full w-1 bg-secondary-color pointer-events-none"></div>
             </div>

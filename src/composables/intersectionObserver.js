@@ -12,12 +12,12 @@ export function observeIntersections(intersections) {
           if(intersections.givenClassElement) {
             for(let i = 0; intersections.givenClassElement.length > i; i++ ) {
               setTimeout(() => {
-                document.querySelector(intersections.givenClassElement[i]).classList.add(intersections.givenClass);
+                document.querySelector(intersections.givenClassElement[i]).classList.add(...intersections.givenClass);
               }, intersections.timeoutValue[i])
             }
           } else {
             setTimeout(() => {
-              entry.target.classList.add(intersections.givenClass);
+              entry.target.classList.add(...intersections.givenClass);
             }, intersections.timeoutValue)
           }
 
@@ -27,12 +27,12 @@ export function observeIntersections(intersections) {
             setTimeout(() => {
               //  Avoid error that the element is null if element dont exist on view
               const element = document.querySelector(intersections.givenClassElement[i])
-              element ? element.classList.remove(intersections.givenClass) : "";
+              element ? element.classList.remove(...intersections.givenClass) : "";
             }, intersections.timeoutValue[i])
           }
         } else {
           setTimeout(() => {
-            entry.target.classList.remove(intersections.givenClass);
+            entry.target.classList.remove(...intersections.givenClass);
           }, intersections.timeoutValue)
         }
       }
